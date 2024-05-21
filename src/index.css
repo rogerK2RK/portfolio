@@ -1,0 +1,270 @@
+
+body {
+  margin: 0;
+  color: #fff;
+  font-family: 'Raleway', Helvetica, Arial, Lucida, sans-serif;
+}
+
+.first-section {
+  /* height: 100vh; */
+  width: 100%;
+  position: relative;
+}
+
+.first-section-box-img-bckgrnd {
+  height: 100vh;
+  width: 100%;
+}
+
+.bckgrnd {
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  object-fit: cover;
+}
+
+.first-section-content {
+  z-index: 10;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;
+  bottom: 0px;
+  align-content: center;
+  text-align: center;
+}
+
+h1 {
+  font-size: 45px;
+  font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
+  letter-spacing: 2px;
+}
+
+.first-section-content hr {
+  width: 10%;
+  background-color: #E02B20;
+  height: 2px;
+  border: 0px;
+  margin-bottom: 40px;
+}
+
+.first-section-content span {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.first-section P {
+  font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
+  font-weight: bold;
+  letter-spacing: 2.5px;
+  font-size: 30px;
+  position: absolute;
+  bottom: 20px;
+  align-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.apropos-section {
+  display: flex;
+  position: relative;
+  /* height: 654px; */
+  width: 100%;
+  background-color: #1F1F1F;
+  /* margin-top: 123px; */
+}
+
+h2 {
+  font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
+  font-size: 45px;
+  letter-spacing: 2.5px;
+}
+
+.apropos-section h2 {
+  position: absolute;
+  top: 3%;
+  left: 12%;
+}
+
+.apropos-section button {
+  letter-spacing: 2.5px;
+  padding: 20px 45px;
+  letter-spacing: 2.5px;
+  font-size: 25px;
+  font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
+  position: absolute;
+  color: #fff;
+  border: 0px;
+  border-radius: 5px;
+  bottom: 10%;
+}
+
+.web {
+  background-color: #E02B20;
+  left: 12%;
+}
+
+.contents {
+  display: flex;
+  width: 60%;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  align-content: center;
+  text-align: left;
+  /* margin: 20px; */
+}
+
+.box-text {
+  /* background-color: #2E2E2E; */
+  padding: 2% 2% 2% 0%;
+  font-size: 20px;
+  line-height: 1.5;
+  width: 60%;
+  border-radius: 14px;
+}
+
+.box-img {
+  width: 40%;
+}
+
+.box-img img {
+  width: 100%;
+  height: 916px;
+  object-fit: cover;
+}
+
+.skills-section {
+  background-color: #2E2E2E;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skills-section h2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.skills-section-bx-contents {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.one-box-content {
+  width: 23%;
+  text-align: center;
+
+}
+
+.one-box-content h3 {
+  margin-bottom: 56px;
+}
+
+p {
+  font-size: 20px;
+}
+
+h3 {
+  align-items: center;
+  font-weight: 900;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+h3 img {
+  margin-right: 10px;
+}
+
+.progress-container {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 2px;
+  overflow: hidden;
+  height: 20px;
+  margin: 0px 0px 20px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #E02B20;
+  text-align: center;
+  line-height: 30px; /* Assure que le texte est centré verticalement */
+  color: white;
+  border-radius: 2px 2px 2px 2px; /* Arrondit les coins de gauche */
+}
+
+.bx-group-comp {
+  width: 20%;
+}
+
+.bx-one-comp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.bx-one-comp img{
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+}
+
+.bx-one-comp-content {
+  width: 84%;
+}
+
+.bx-one-comp-infos {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bx-one-comp-infos p {
+  margin-bottom: 3px;
+}
+
+/* Portfolio */
+.portfolio-section {
+  background-color : #1F1F1F;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.portfolio-head-content {
+  margin-bottom: 50px;
+}
+
+.portfolio-head-content p {
+  padding: 0 30%;
+}
+
+a {
+  color: #E02B20;
+  text-decoration: none;
+}
+
+.bx-all-portfolio {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bx-all-portfolio .bx-one-portfolio {
+  width: 33%;
+  height: 350px;
+  object-fit: cover;
+}
+
+
+.bx-all-portfolio a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
