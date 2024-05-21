@@ -65,6 +65,7 @@ h1 {
   width: 100%;
 }
 
+                        /*A Propo*/
 .apropos-section {
   display: flex;
   position: relative;
@@ -134,6 +135,7 @@ h2 {
   object-fit: cover;
 }
 
+                        /*SKills*/
 .skills-section {
   background-color: #2E2E2E;
   display: flex;
@@ -228,7 +230,7 @@ h3 img {
   margin-bottom: 3px;
 }
 
-/* Portfolio */
+                        /* Portfolio */
 .portfolio-section {
   background-color : #1F1F1F;
   display: flex;
