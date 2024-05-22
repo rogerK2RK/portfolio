@@ -48,28 +48,28 @@ function Web() {
           <img className='bckgrnd' src={bckgrnd1} alt="image of progremer how work" />
         </div>
         <div className='first-section-content'>
-          <p>RETITA ROGER <br /> 25ANS</p>
-          <h1>Alternance Développeur Web Full Stack / Front End</h1>
-          <hr />
-          <span>Transformons des lignes de code en expériences visuelles.</span>
+          <h2 className='animated-title'>RETITA ROGER <br /> 25ANS</h2>
+          <h1 className='animated-title'>Alternance Développeur Web Full Stack / Front End</h1>
+          <hr className='animated-title'/>
+          <span className='animated-title'>Transformons des lignes de code en expériences visuelles.</span>
         </div>
       </section>
       <section className="apropos-section">
-        <h2>A PROPOS</h2>
         <div className="contents">
+          <h2 className='animated-title'>A PROPOS</h2>
           <div className="box-text">
             <p >Je m'appelle Roger RETITA, j'approche de mes 25 ans cette année. Né et grandi à Madagascar, je suis une personne naturellement curieuse, aimant découvrir de nouvelles choses. En arrivant en France, j'ai développé une passion pour le développement web, que j'aborde avec la même rigueur et précision que mes autres intérêts artistiques.</p>
             <p >Pour moi, le développement web ne diffère pas tant de la création musicale. Dans les deux domaines, il est crucial de veiller à ce que le travail soit bien présenté et accessible sur tous les supports, que ce soit une tablette, un ordinateur ou un téléphone. Cette attention au détail assure une expérience utilisateur optimale, quelle que soit la plateforme utilisée.</p>
             <p >Je suis une personne appliquée dans mon travail, prenant le temps nécessaire avant de finaliser un projet, peu importe le temps que cela peut prendre. M'accepter au sein de votre entreprise, c'est accepter ma curiosité et ma joie de vivre.</p>
           </div>
+          <button className='web'>Contact</button>
         </div>
-        <button className='web'>Contact</button>
         <div className="box-img">
           <img src={bckgrnd2} alt="image of progremer how work" />
         </div>
       </section>
       <section className="skills-section">
-        <h2>SKILLS</h2>
+        <h2 className='animated-title'>SKILLS</h2>
         <div className='skills-section-bx-contents'>
           <div className='one-box-content'>
             <h3><img src={iconbrush} alt="icon de crayon" />Design + Development</h3>
@@ -94,7 +94,7 @@ function Web() {
                   <p>90%</p>
                 </div>
                 <div className='progress-container'>
-                  <div className="progress-bar" style={{width: '90%'}}>
+                  <div className="progress-bar web" style={{width: '90%'}}>
                   </div>
                 </div>
               </div>
@@ -107,7 +107,7 @@ function Web() {
                   <p>85%</p>
                 </div>
                 <div className='progress-container'>
-                  <div className="progress-bar" style={{width: '85%'}}>
+                  <div className="progress-bar web" style={{width: '85%'}}>
                   </div>
                 </div>
               </div>
@@ -120,7 +120,7 @@ function Web() {
                   <p>80%</p>
                 </div>
                 <div className='progress-container'>
-                  <div className="progress-bar" style={{width: '80%'}}>
+                  <div className="progress-bar web" style={{width: '80%'}}>
                   </div>
                 </div>
               </div>
@@ -133,7 +133,7 @@ function Web() {
                   <p>49%</p>
                 </div>
                 <div className='progress-container'>
-                  <div className="progress-bar" style={{width: '49%'}}>
+                  <div className="progress-bar web" style={{width: '49%'}}>
                   </div>
                 </div>
               </div>
@@ -148,7 +148,7 @@ function Web() {
                   <p>75%</p>
                 </div>
                 <div className='progress-container'>
-                  <div className="progress-bar" style={{width: '75%'}}>
+                  <div className="progress-bar web" style={{width: '75%'}}>
                   </div>
                 </div>
               </div>
@@ -161,7 +161,7 @@ function Web() {
                   <p>80%</p>
                 </div>
                 <div className='progress-container'>
-                  <div className="progress-bar" style={{width: '80%'}}>
+                  <div className="progress-bar web" style={{width: '80%'}}>
                   </div>
                 </div>
               </div>
@@ -174,7 +174,7 @@ function Web() {
                   <p>40%</p>
                 </div>
                 <div className='progress-container'>
-                  <div className="progress-bar" style={{width: '40%'}}>
+                  <div className="progress-bar web" style={{width: '40%'}}>
                   </div>
                 </div>
               </div>
@@ -187,7 +187,7 @@ function Web() {
                   <p>50%</p>
                 </div>
                 <div className='progress-container'>
-                  <div className="progress-bar" style={{width: '50%'}}>
+                  <div className="progress-bar web" style={{width: '50%'}}>
                   </div>
                 </div>
               </div>
@@ -202,7 +202,7 @@ function Web() {
                   <p>60%</p>
                 </div>
                 <div className='progress-container'>
-                  <div className="progress-bar" style={{width: '60%'}}>
+                  <div className="progress-bar web" style={{width: '60%'}}>
                   </div>
                 </div>
               </div>
@@ -215,7 +215,7 @@ function Web() {
                   <p>56%</p>
                 </div>
                 <div className='progress-container'>
-                  <div className="progress-bar" style={{width: '56%'}}>
+                  <div className="progress-bar web" style={{width: '56%'}}>
                   </div>
                 </div>
               </div>
@@ -228,7 +228,7 @@ function Web() {
                   <p>62%</p>
                 </div>
                 <div className='progress-container'>
-                  <div className="progress-bar" style={{width: '62%'}}>
+                  <div className="progress-bar web" style={{width: '62%'}}>
                   </div>
                 </div>
               </div>
@@ -241,48 +241,49 @@ function Web() {
                   <p>80%</p>
                 </div>
                 <div className='progress-container'>
-                  <div className="progress-bar" style={{width: '80%'}}>
+                  <div className="progress-bar web" style={{width: '80%'}}>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        {/* <button className='show-skills web'>Voir plus</button> */}
       </section>
       <section className='portfolio-section'>
         <div className='portfolio-head-content'>
-          <h2>PORTFOLIO</h2>
+          <h2 className='animated-title'>PORTFOLIO</h2>
           <p>Découvrez un aperçu de mes réalisations pendant mon alternance et ma formation. Pour explorer davantage chaque projet, consultez mon profil <a href="https://github.com/rogerK2RK?tab=repositories">GitHub</a>.</p>
         </div>
         <div className='bx-all-portfolio'>
         <div className='bx-one-portfolio'>
             <a href="https://rogerretita.editorx.io/mysite">
-              <img src={portfolio} alt=" minature site portfolio" />
+              <img src={portfolio} className='img-prtf' alt=" minature site portfolio" />
             </a>
           </div>
           <div className='bx-one-portfolio'>
             <a href="https://doohit.fr/">
-              <img src={doohit} alt=" minature site doohit" />
+              <img src={doohit} className='img-prtf' alt=" minature site doohit" />
             </a>
           </div>
           <div className='bx-one-portfolio'>
             <a href="https://rogerk2rk.github.io/P3_01_lienGithub/index.html">
-              <img src={ohmyfood} alt=" minature site oh My food" />
+              <img src={ohmyfood} className='img-prtf' alt=" minature site oh My food" />
             </a>
           </div>
           <div className='bx-one-portfolio'>
             <a href="https://rogerk2rk.github.io/P6_Retita_Roger/">
-              <img src={photographe} alt=" minature site photographe" />
+              <img src={photographe} className='img-prtf' alt=" minature site photographe" />
             </a>
           </div>
           <div className='bx-one-portfolio'>
             <a href="https://rogerk2rk.github.io/projetfinal-semaine1/">
-              <img src={harmonia} alt=" minature site harmonia" />
+              <img src={harmonia} className='img-prtf' alt=" minature site harmonia" />
             </a>
           </div>
           <div className='bx-one-portfolio'>
             <a href="https://rogerk2rk.github.io/P4_RETITA_Roger/">
-              <img src={gameone} alt=" minature site gameone" />
+              <img src={gameone} className='img-prtf' alt=" minature site gameone" />
             </a>
           </div>
         </div>
@@ -292,7 +293,7 @@ function Web() {
           <img className='bckgrnd' src={bckgrnd3} alt="image of code web" />
         </div>
         <div className='contact-section-content'>
-          <h2>CONTACT</h2>
+          <h2 className='animated-title'>CONTACT</h2>
           <hr />
           <div>
             <h3><img src={location} alt="icon location" />Adresse Postale</h3>
