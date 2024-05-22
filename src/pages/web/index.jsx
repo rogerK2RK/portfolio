@@ -1,11 +1,21 @@
 import React from 'react';
-import './Styles.css';
 import bckgrnd1 from './imgs/bckgrnd/bckgrnd-web1.png'
 import bckgrnd2 from './imgs/bckgrnd/bckgrnd-web2.png'
+import bckgrnd3 from './imgs/bckgrnd/bckgrnd-web3.png'
 // import bckgrnd3 from './imgs/bckgrnd/bckgrnd-web3.png'
 import iconbrush from './imgs/icons/brush-2.png'
 import iconsimcard from './imgs/icons/simcard.png'
 import iconmobile from './imgs/icons/mobile.png'
+import location from './imgs/icons/location.png'
+import mail from './imgs/icons/sms.png'
+import call from './imgs/icons/call.png'
+import github from './imgs/icons/github.png'
+import beatstar from './imgs/icons/beatstar.png'
+import soundcloud from './imgs/icons/soundcloud.png'
+import youtube from './imgs/icons/youtube.png'
+import iconbottom from './imgs/icons/arrow-bottom.png'
+
+
 import html from './imgs/icons/html.png'
 import css from './imgs/icons/css.png'
 import javascript from './imgs/icons/javascript.png'
@@ -26,21 +36,23 @@ import harmonia from './imgs/prtfl/127.0.0.1_5500_index.html.png'
 import ohmyfood from './imgs/prtfl/rogerk2rk.github.io_P3_01_lienGithub_index.html.png'
 
 
+
 function Web() {
  
 
   return (
     <>
       <section className="first-section">
+        
         <div className='first-section-box-img-bckgrnd'>
           <img className='bckgrnd' src={bckgrnd1} alt="image of progremer how work" />
         </div>
         <div className='first-section-content'>
+          <p>RETITA ROGER <br /> 25ANS</p>
           <h1>Alternance Développeur Web Full Stack / Front End</h1>
           <hr />
           <span>Transformons des lignes de code en expériences visuelles.</span>
         </div>
-        <p>RETITA ROGER</p>
       </section>
       <section className="apropos-section">
         <h2>A PROPOS</h2>
@@ -275,6 +287,42 @@ function Web() {
           </div>
         </div>
       </section>
+      <section className='contact-section'>
+        <div className='contact-section-box-img-bckgrnd'>
+          <img className='bckgrnd' src={bckgrnd3} alt="image of code web" />
+        </div>
+        <div className='contact-section-content'>
+          <h2>CONTACT</h2>
+          <hr />
+          <div>
+            <h3><img src={location} alt="icon location" />Adresse Postale</h3>
+            <a href="https://maps.app.goo.gl/hCJrmcsMZjsA9vKX8">1 bd Jean Baptiste Carpeaux, 95200 Sarcelles</a>
+            <h3><img src={mail} alt="icon mail" />Adresse Mail</h3>
+            <a href="https://maps.app.goo.gl/hCJrmcsMZjsA9vKX8">roger.retita@gmail.com</a>
+            <h3><img src={call} alt="icon call" />Téléphone</h3>
+            <a href="tel:+33668347755">06.68.34.77.55</a>
+          </div>
+          <p className='mobilite'>Mobilité dans toutes la France</p>
+        </div>
+      </section>
+      <footer>
+        <p>© 2024 by RETITA Roger.</p>
+        <div className='footer-bx-icon'>
+          <a href="https://github.com/rogerK2RK?tab=repositories">
+            <img src={github} alt="icon github" />
+          </a>
+          <a href="https://www.youtube.com/channel/UCDECuuPMRTnP4NWFvSC2jaA">
+            <img src={youtube} alt="incon youtube" />
+          </a>
+          <a href="https://soundcloud.com/user-406770951">
+            <img src={soundcloud} alt="icon soundcloud" />
+          </a>
+          <a href="https://www.beatstars.com/rogerretita14426">
+            <img src={beatstar} alt="icon beatstar" />
+          </a>
+          
+        </div>
+      </footer>
     </>
   );
 }

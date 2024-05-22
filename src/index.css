@@ -18,7 +18,7 @@ body {
 
 .bckgrnd {
   width: 100%;
-  height: 100vh;
+  height: 110vh;
   z-index: 1;
   object-fit: cover;
 }
@@ -35,12 +35,28 @@ body {
 }
 
 h1 {
-  font-size: 45px;
+  font-size: 51px;
   font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
-  letter-spacing: 2px;
+  letter-spacing: 5px;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
-.first-section-content hr {
+h2 {
+  font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
+  font-size: 45px;
+  letter-spacing: 4.5px;
+}
+
+h3 {
+  letter-spacing: 1.5px;
+}
+
+p {
+  letter-spacing: 1px;
+}
+
+hr {
   width: 10%;
   background-color: #E02B20;
   height: 2px;
@@ -53,19 +69,33 @@ h1 {
   font-weight: bold;
 }
 
-.first-section P {
+.first-section-content p {
   font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
   font-weight: bold;
-  letter-spacing: 2.5px;
-  font-size: 30px;
-  position: absolute;
-  bottom: 20px;
+  letter-spacing: 4.5px;
+  font-size: 35px;
+  /* position: absolute;
+  top: 16%;;
   align-content: center;
   text-align: center;
-  width: 100%;
+  width: 100%; */
 }
 
                         /*A Propo*/
+@media (max-width: 1111px) {
+  .apropos-section {
+    display: flex;
+    flex-wrap: wrap ! important;
+  }
+
+  .contents {
+    display: flex;
+    width: 100% ! important;
+  }
+  .box-img {
+    width: 100% ! important;
+  }
+}
 .apropos-section {
   display: flex;
   position: relative;
@@ -73,12 +103,6 @@ h1 {
   width: 100%;
   background-color: #1F1F1F;
   /* margin-top: 123px; */
-}
-
-h2 {
-  font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
-  font-size: 45px;
-  letter-spacing: 2.5px;
 }
 
 .apropos-section h2 {
@@ -264,9 +288,74 @@ a {
   object-fit: cover;
 }
 
-
 .bx-all-portfolio a img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+                        /*Contact*/
+.contact-section-content {
+  z-index: 100;
+  position: absolute;
+  top: 15%;
+  bottom: 15%;
+  left: 25%;
+  right: 24%;
+  align-content: center;
+  text-align: center;
+  background-color: #1F1F1F;
+  width: 50%;
+  border-radius: 5px;
+}
+
+.contact-section-box-img-bckgrnd {
+  height: 100vh;
+}
+
+.contact-section-content h2 {
+  margin-top: 0px;
+}
+
+.contact-section-content .mobilite {
+  margin-top: 60px;
+  font-size: 16px;
+  font-weight: lighter;
+  color: #898989;
+}
+
+.contact-section {
+  position: relative;
+}
+
+/* Footer */
+
+footer {
+  height: 100px;
+  background-color: #2E2E2E;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer p{
+  font-size: 14px;
+}
+
+.footer-bx-icon {
+  display: flex;
+  justify-content: space-between;
+  width: 15%;
+}
+
+.contact-section-box-img-bckgrnd .bckgrnd {
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  object-fit: cover;
+}
+
+.footer-bx-icon img {
+  height: 25px;
+  width: 25px;
 }
