@@ -282,10 +282,14 @@ hr {
 .show-skills {
   display: none;
 }
-
+@media (min-width: 767px) {
+  .skills-section {
+    height: 100vh;
+  }
+}
 .skills-section {
   background-color: #2E2E2E;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
