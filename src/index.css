@@ -255,8 +255,28 @@ hr {
   }
 
   .footer-bx-icon {
-    width: 31% ! important;
+    margin-top: 20px;
+    width: 50% ! important;
   }
+
+  .nav-dots {
+    right: -35% !important;
+  }
+  .nav-dots:hover {
+    right: 0% !important;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    text-align: center;
+  }
+
+  footer p {
+    margin-top: 20px;
+    width: 100%;
+  }
+
 }
 
 .show-skills {
