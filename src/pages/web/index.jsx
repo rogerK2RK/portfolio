@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }  from 'react';
 import { Link, Element } from 'react-scroll';
 
 import bckgrnd1 from './imgs/bckgrnd/bckgrnd-web1.png'
@@ -44,6 +44,7 @@ function Web() {
 
   return (
     <>
+      <NavDots />
       <section className="first-section">
         
         <div className='first-section-box-img-bckgrnd'>
@@ -53,246 +54,251 @@ function Web() {
           <h2 className='animated-title'>RETITA ROGER <br /> 25ANS</h2>
           <h1 className='animated-title'>Alternance Développeur Web Full Stack / Front End</h1>
           <hr className='animated-title web'/>
-          <span className='animated-title'>Transformons des lignes de code en expériences visuelles.</span>
+          <p className='animated-title'>Transformons des lignes de code en expériences visuelles.</p>
         </div>
       </section>
-      <section className="apropos-section">
-        <div className="contents">
-          <h2 className='animated-title'>A PROPOS</h2>
-          <div className="box-text">
-            <p >Je m'appelle Roger RETITA, j'approche de mes 25 ans cette année. Né et grandi à Madagascar, je suis une personne naturellement curieuse, aimant découvrir de nouvelles choses. En arrivant en France, j'ai développé une passion pour le développement web, que j'aborde avec la même rigueur et précision que mes autres intérêts artistiques.</p>
-            <p >Pour moi, le développement web ne diffère pas tant de la création musicale. Dans les deux domaines, il est crucial de veiller à ce que le travail soit bien présenté et accessible sur tous les supports, que ce soit une tablette, un ordinateur ou un téléphone. Cette attention au détail assure une expérience utilisateur optimale, quelle que soit la plateforme utilisée.</p>
-            <p >Je suis une personne appliquée dans mon travail, prenant le temps nécessaire avant de finaliser un projet, peu importe le temps que cela peut prendre. M'accepter au sein de votre entreprise, c'est accepter ma curiosité et ma joie de vivre.</p>
-          </div>
-          <Link to="target-section" smooth={true} duration={500}>
-            <button className='web'>Contact</button>
-          </Link>
-        </div>
-        <div className="box-img">
-          <img src={bckgrnd2} alt="image of progremer how work" />
-        </div>
-      </section>
-      <section className="skills-section">
-        <h2 className='animated-title'>SKILLS</h2>
-        <div className='skills-section-bx-contents'>
-          <div className='one-box-content'>
-            <h3><img src={iconbrush} alt="icon de crayon" />Design + Dévelopepment</h3>
-            <p>Des designs épurés et modernes, optimisés pour les performances, le référencement, et la conversion des utilisateurs en clients.</p>
-          </div>
-          <div className='one-box-content'>
-            <h3><img src={iconsimcard} alt="icon de crayon" />Technologie</h3>
-            <p>Combined all the latest technologies to a progressive website.</p>
-          </div>
-          <div className='one-box-content'>
-            <h3><img src={iconmobile} alt="icon de crayon" />Responsive</h3>
-            <p>Un design réactif garantit que votre site web est accessible à tous les utilisateurs, quel que soit leur appareil.</p>
-          </div>
-        </div>
-        <div className='skills-section-bx-contents'>
-          <div className='bx-group-comp'>
-            <div className='bx-one-comp'>
-              <img src={html} alt="icon html" />
-              <div className='bx-one-comp-content'>
-                <div className='bx-one-comp-infos'>
-                  <p>HTML</p>
-                  <p>90%</p>
-                </div>
-                <div className='progress-container'>
-                  <div className="progress-bar web" style={{width: '90%'}}>
-                  </div>
-                </div>
-              </div>
+      <Element name="about">
+        <section className="apropos-section">
+          <div className="contents">
+            <h2 className='animated-title'>A PROPOS</h2>
+            <div className="box-text">
+              <p >Je m'appelle Roger RETITA, j'approche de mes 25 ans cette année. Né et grandi à Madagascar, je suis une personne naturellement curieuse, aimant découvrir de nouvelles choses. En arrivant en France, j'ai développé une passion pour le développement web, que j'aborde avec la même rigueur et précision que mes autres intérêts artistiques.</p>
+              <p >Pour moi, le développement web ne diffère pas tant de la création musicale. Dans les deux domaines, il est crucial de veiller à ce que le travail soit bien présenté et accessible sur tous les supports, que ce soit une tablette, un ordinateur ou un téléphone. Cette attention au détail assure une expérience utilisateur optimale, quelle que soit la plateforme utilisée.</p>
+              <p >Je suis une personne appliquée dans mon travail, prenant le temps nécessaire avant de finaliser un projet, peu importe le temps que cela peut prendre. M'accepter au sein de votre entreprise, c'est accepter ma curiosité et ma joie de vivre.</p>
             </div>
-            <div className='bx-one-comp'>
-              <img src={css} alt="icon css" />
-              <div className='bx-one-comp-content'>
-                <div className='bx-one-comp-infos'>
-                  <p>CSS</p>
-                  <p>85%</p>
-                </div>
-                <div className='progress-container'>
-                  <div className="progress-bar web" style={{width: '85%'}}>
-                  </div>
-                </div>
-              </div>
+            <Link to="contact" smooth={true} duration={500}>
+              <button className='web'>Contact</button>
+            </Link>
+          </div>
+          <div className="box-img">
+            <img src={bckgrnd2} alt="image of progremer how work" />
+          </div>
+        </section>
+      </Element>
+      <Element name="skills">
+        <section className="skills-section">
+          <h2 className='animated-title'>SKILLS</h2>
+          <div className='skills-section-bx-contents'>
+            <div className='one-box-content'>
+              <h3><img src={iconbrush} alt="icon de crayon" />Design + Dévelopepment</h3>
+              <p>Des designs épurés et modernes, optimisés pour les performances, le référencement, et la conversion des utilisateurs en clients.</p>
             </div>
-            <div className='bx-one-comp'>
-              <img src={javascript} alt="icon javascript" />
-              <div className='bx-one-comp-content'>
-                <div className='bx-one-comp-infos'>
-                  <p>JavaScript</p>
-                  <p>80%</p>
-                </div>
-                <div className='progress-container'>
-                  <div className="progress-bar web" style={{width: '80%'}}>
-                  </div>
-                </div>
-              </div>
+            <div className='one-box-content'>
+              <h3><img src={iconsimcard} alt="icon de crayon" />Technologie</h3>
+              <p>Combined all the latest technologies to a progressive website.</p>
             </div>
-            <div className='bx-one-comp'>
-              <img src={jquery} alt="icon jquery" />
-              <div className='bx-one-comp-content'>
-                <div className='bx-one-comp-infos'>
-                  <p>JQuery</p>
-                  <p>49%</p>
-                </div>
-                <div className='progress-container'>
-                  <div className="progress-bar web" style={{width: '49%'}}>
-                  </div>
-                </div>
-              </div>
+            <div className='one-box-content'>
+              <h3><img src={iconmobile} alt="icon de crayon" />Responsive</h3>
+              <p>Un design réactif garantit que votre site web est accessible à tous les utilisateurs, quel que soit leur appareil.</p>
             </div>
           </div>
-          <div className='bx-group-comp'>
-            <div className='bx-one-comp'>
-              <img src={react} alt="icon html" />
-              <div className='bx-one-comp-content'>
-                <div className='bx-one-comp-infos'>
-                  <p>React(Redux)</p>
-                  <p>75%</p>
+          <div className='skills-section-bx-contents'>
+            <div className='bx-group-comp'>
+              <div className='bx-one-comp'>
+                <img src={html} alt="icon html" />
+                <div className='bx-one-comp-content'>
+                  <div className='bx-one-comp-infos'>
+                    <p>HTML</p>
+                    <p>90%</p>
+                  </div>
+                  <div className='progress-container'>
+                    <div className="progress-bar web" style={{width: '90%'}}>
+                    </div>
+                  </div>
                 </div>
-                <div className='progress-container'>
-                  <div className="progress-bar web" style={{width: '75%'}}>
+              </div>
+              <div className='bx-one-comp'>
+                <img src={css} alt="icon css" />
+                <div className='bx-one-comp-content'>
+                  <div className='bx-one-comp-infos'>
+                    <p>CSS</p>
+                    <p>85%</p>
+                  </div>
+                  <div className='progress-container'>
+                    <div className="progress-bar web" style={{width: '85%'}}>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className='bx-one-comp'>
+                <img src={javascript} alt="icon javascript" />
+                <div className='bx-one-comp-content'>
+                  <div className='bx-one-comp-infos'>
+                    <p>JavaScript</p>
+                    <p>80%</p>
+                  </div>
+                  <div className='progress-container'>
+                    <div className="progress-bar web" style={{width: '80%'}}>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className='bx-one-comp'>
+                <img src={jquery} alt="icon jquery" />
+                <div className='bx-one-comp-content'>
+                  <div className='bx-one-comp-infos'>
+                    <p>JQuery</p>
+                    <p>49%</p>
+                  </div>
+                  <div className='progress-container'>
+                    <div className="progress-bar web" style={{width: '49%'}}>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className='bx-one-comp'>
-              <img src={wordpress} alt="icon wordpress" />
-              <div className='bx-one-comp-content'>
-                <div className='bx-one-comp-infos'>
-                  <p>WordPress</p>
-                  <p>80%</p>
+            <div className='bx-group-comp'>
+              <div className='bx-one-comp'>
+                <img src={react} alt="icon html" />
+                <div className='bx-one-comp-content'>
+                  <div className='bx-one-comp-infos'>
+                    <p>React(Redux)</p>
+                    <p>75%</p>
+                  </div>
+                  <div className='progress-container'>
+                    <div className="progress-bar web" style={{width: '75%'}}>
+                    </div>
+                  </div>
                 </div>
-                <div className='progress-container'>
-                  <div className="progress-bar web" style={{width: '80%'}}>
+              </div>
+              <div className='bx-one-comp'>
+                <img src={wordpress} alt="icon wordpress" />
+                <div className='bx-one-comp-content'>
+                  <div className='bx-one-comp-infos'>
+                    <p>WordPress</p>
+                    <p>80%</p>
+                  </div>
+                  <div className='progress-container'>
+                    <div className="progress-bar web" style={{width: '80%'}}>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className='bx-one-comp'>
+                <img src={prestashop} alt="icon prestashop" />
+                <div className='bx-one-comp-content'>
+                  <div className='bx-one-comp-infos'>
+                    <p>PrestaShop</p>
+                    <p>40%</p>
+                  </div>
+                  <div className='progress-container'>
+                    <div className="progress-bar web" style={{width: '40%'}}>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className='bx-one-comp'>
+                <img src={wix} alt="icon wix" />
+                <div className='bx-one-comp-content'>
+                  <div className='bx-one-comp-infos'>
+                    <p>Wix</p>
+                    <p>50%</p>
+                  </div>
+                  <div className='progress-container'>
+                    <div className="progress-bar web" style={{width: '50%'}}>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className='bx-one-comp'>
-              <img src={prestashop} alt="icon prestashop" />
-              <div className='bx-one-comp-content'>
-                <div className='bx-one-comp-infos'>
-                  <p>PrestaShop</p>
-                  <p>40%</p>
-                </div>
-                <div className='progress-container'>
-                  <div className="progress-bar web" style={{width: '40%'}}>
+            <div className='bx-group-comp'>
+              <div className='bx-one-comp'>
+                <img src={figma} alt="icon figma" />
+                <div className='bx-one-comp-content'>
+                  <div className='bx-one-comp-infos'>
+                    <p>Figma</p>
+                    <p>60%</p>
+                  </div>
+                  <div className='progress-container'>
+                    <div className="progress-bar web" style={{width: '60%'}}>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className='bx-one-comp'>
-              <img src={wix} alt="icon wix" />
-              <div className='bx-one-comp-content'>
-                <div className='bx-one-comp-infos'>
-                  <p>Wix</p>
-                  <p>50%</p>
+              <div className='bx-one-comp'>
+                <img src={photoshop} alt="icon photoshop" />
+                <div className='bx-one-comp-content'>
+                  <div className='bx-one-comp-infos'>
+                    <p>Photoshop</p>
+                    <p>56%</p>
+                  </div>
+                  <div className='progress-container'>
+                    <div className="progress-bar web" style={{width: '56%'}}>
+                    </div>
+                  </div>
                 </div>
-                <div className='progress-container'>
-                  <div className="progress-bar web" style={{width: '50%'}}>
+              </div>
+              <div className='bx-one-comp'>
+                <img src={premierepro} alt="icon premierepro" />
+                <div className='bx-one-comp-content'>
+                  <div className='bx-one-comp-infos'>
+                    <p>Première Pro</p>
+                    <p>62%</p>
+                  </div>
+                  <div className='progress-container'>
+                    <div className="progress-bar web" style={{width: '62%'}}>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className='bx-one-comp'>
+                <img src={vscode} alt="icon vscode" />
+                <div className='bx-one-comp-content'>
+                  <div className='bx-one-comp-infos'>
+                    <p>Vs Code</p>
+                    <p>80%</p>
+                  </div>
+                  <div className='progress-container'>
+                    <div className="progress-bar web" style={{width: '80%'}}>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className='bx-group-comp'>
-            <div className='bx-one-comp'>
-              <img src={figma} alt="icon figma" />
-              <div className='bx-one-comp-content'>
-                <div className='bx-one-comp-infos'>
-                  <p>Figma</p>
-                  <p>60%</p>
-                </div>
-                <div className='progress-container'>
-                  <div className="progress-bar web" style={{width: '60%'}}>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='bx-one-comp'>
-              <img src={photoshop} alt="icon photoshop" />
-              <div className='bx-one-comp-content'>
-                <div className='bx-one-comp-infos'>
-                  <p>Photoshop</p>
-                  <p>56%</p>
-                </div>
-                <div className='progress-container'>
-                  <div className="progress-bar web" style={{width: '56%'}}>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='bx-one-comp'>
-              <img src={premierepro} alt="icon premierepro" />
-              <div className='bx-one-comp-content'>
-                <div className='bx-one-comp-infos'>
-                  <p>Première Pro</p>
-                  <p>62%</p>
-                </div>
-                <div className='progress-container'>
-                  <div className="progress-bar web" style={{width: '62%'}}>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='bx-one-comp'>
-              <img src={vscode} alt="icon vscode" />
-              <div className='bx-one-comp-content'>
-                <div className='bx-one-comp-infos'>
-                  <p>Vs Code</p>
-                  <p>80%</p>
-                </div>
-                <div className='progress-container'>
-                  <div className="progress-bar web" style={{width: '80%'}}>
-                  </div>
-                </div>
-              </div>
-            </div>
+        </section>
+      </Element>
+      <Element name="portfolio">
+        <section className='portfolio-section'>
+          <div className='portfolio-head-content'>
+            <h2 className='animated-title'>PORTFOLIO</h2>
+            <p>Découvrez un aperçu de mes réalisations pendant mon alternance et ma formation. Pour explorer davantage chaque projet, consultez mon profil <a className='txt-web' href="https://github.com/rogerK2RK?tab=repositories">GitHub</a>.</p>
           </div>
-        </div>
-        {/* <button className='show-skills web'>Voir plus</button> */}
-      </section>
-      <section className='portfolio-section'>
-        <div className='portfolio-head-content'>
-          <h2 className='animated-title'>PORTFOLIO</h2>
-          <p>Découvrez un aperçu de mes réalisations pendant mon alternance et ma formation. Pour explorer davantage chaque projet, consultez mon profil <a className='txt-web' href="https://github.com/rogerK2RK?tab=repositories">GitHub</a>.</p>
-        </div>
-        <div className='bx-all-portfolio'>
-        <div className='bx-one-portfolio'>
-            <a href="https://rogerretita.editorx.io/mysite">
-              <img src={portfolio} className='img-prtf' alt=" minature site portfolio" />
-            </a>
-          </div>
+          <div className='bx-all-portfolio'>
           <div className='bx-one-portfolio'>
-            <a href="https://doohit.fr/">
-              <img src={doohit} className='img-prtf' alt=" minature site doohit" />
-            </a>
+              <a href="https://rogerretita.editorx.io/mysite">
+                <img src={portfolio} className='img-prtf' alt=" minature site portfolio" />
+              </a>
+            </div>
+            <div className='bx-one-portfolio'>
+              <a href="https://doohit.fr/">
+                <img src={doohit} className='img-prtf' alt=" minature site doohit" />
+              </a>
+            </div>
+            <div className='bx-one-portfolio'>
+              <a href="https://rogerk2rk.github.io/P3_01_lienGithub/index.html">
+                <img src={ohmyfood} className='img-prtf' alt=" minature site oh My food" />
+              </a>
+            </div>
+            <div className='bx-one-portfolio'>
+              <a href="https://rogerk2rk.github.io/P6_Retita_Roger/">
+                <img src={photographe} className='img-prtf' alt=" minature site photographe" />
+              </a>
+            </div>
+            <div className='bx-one-portfolio'>
+              <a href="https://rogerk2rk.github.io/projetfinal-semaine1/">
+                <img src={harmonia} className='img-prtf' alt=" minature site harmonia" />
+              </a>
+            </div>
+            <div className='bx-one-portfolio'>
+              <a href="https://rogerk2rk.github.io/P4_RETITA_Roger/">
+                <img src={gameone} className='img-prtf' alt=" minature site gameone" />
+              </a>
+            </div>
           </div>
-          <div className='bx-one-portfolio'>
-            <a href="https://rogerk2rk.github.io/P3_01_lienGithub/index.html">
-              <img src={ohmyfood} className='img-prtf' alt=" minature site oh My food" />
-            </a>
-          </div>
-          <div className='bx-one-portfolio'>
-            <a href="https://rogerk2rk.github.io/P6_Retita_Roger/">
-              <img src={photographe} className='img-prtf' alt=" minature site photographe" />
-            </a>
-          </div>
-          <div className='bx-one-portfolio'>
-            <a href="https://rogerk2rk.github.io/projetfinal-semaine1/">
-              <img src={harmonia} className='img-prtf' alt=" minature site harmonia" />
-            </a>
-          </div>
-          <div className='bx-one-portfolio'>
-            <a href="https://rogerk2rk.github.io/P4_RETITA_Roger/">
-              <img src={gameone} className='img-prtf' alt=" minature site gameone" />
-            </a>
-          </div>
-        </div>
-      </section>
-      <Element name="target-section">
+        </section>
+      </Element>
+      <Element name="contact">
         <section className='contact-section'>
           <div className='contact-section-box-img-bckgrnd'>
             <img className='bckgrnd' src={bckgrnd3} alt="image of code web" />
@@ -312,7 +318,6 @@ function Web() {
           </div>
         </section>
       </Element>
-      
       <footer>
         <p>© 2024 by RETITA Roger.</p>
         <div className='footer-bx-icon'>
@@ -336,5 +341,36 @@ function Web() {
     </>
   );
 }
+
+const NavDots = () => {
+  const sections = [
+    { name: 'about', label: 'À PROPOS' },
+    { name: 'skills', label: 'SKILLS' },
+    { name: 'portfolio', label: 'PORTFOLIO' },
+    { name: 'contact', label: 'CONTACT' }
+  ];
+
+  return (
+    <div
+      className={`nav-dots `}
+    >
+      {sections.map(section => (
+        <Link
+          key={section.name}
+          to={section.name}
+          smooth={true}
+          duration={500}
+          activeClass="active"
+          spy={true}
+        >
+          <div className="nav-dot-container">
+            <div className="nav-dot nav-dot-web"></div>
+            <p className="nav-label nav-label-web">{section.label}</p>
+          </div>
+        </Link>
+      ))}
+    </div>
+  );
+};
 
 export default Web;

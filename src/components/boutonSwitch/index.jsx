@@ -32,6 +32,17 @@ const SwitchButtonWrapper = styled.div`
     width: 80px;
     height: 40px;
   }
+
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: fadeInUp 1s ease-out forwards;
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 
 const ButtonSlider = styled.div.attrs(props => ({
@@ -69,7 +80,7 @@ const ButtonSlider = styled.div.attrs(props => ({
 
 const SwitchButton = ({ isPageOne, onClick }) => {
   return (
-    <ButtonContainer>
+    <ButtonContainer >
       <SwitchButtonWrapper onClick={onClick}>
         <ButtonSlider isPageOne={isPageOne}>
           {isPageOne ? <img src={monitor} alt="Monitor Icon" /> : <img src={video} alt="Video Icon" />}

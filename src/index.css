@@ -65,7 +65,7 @@ hr {
   margin-bottom: 40px;
 }
 
-.first-section-content span {
+.first-section-content p {
   font-size: 24px;
   font-weight: bold;
 }
@@ -73,8 +73,8 @@ hr {
 .first-section-content p {
   font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
   font-weight: bold;
-  letter-spacing: 4.5px;
-  font-size: 35px;
+  letter-spacing: 2.5px;
+  font-size: 22px;
   /* position: absolute;
   top: 16%;;
   align-content: center;
@@ -265,6 +265,7 @@ hr {
 
 .skills-section {
   background-color: #2E2E2E;
+  height: 100vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -312,6 +313,8 @@ h3 img {
 .progress-container {
   width: 100%;
   background-color: #ddd;
+  border-color: black;
+  border-radius: 6px;
   border-radius: 2px;
   overflow: hidden;
   height: 20px;
@@ -435,6 +438,7 @@ a {
 }
 
 .contact-section {
+  height: 100vh;
   position: relative;
 }
 
@@ -526,3 +530,83 @@ footer {
     transform: scale(1.1); /* Adjust as needed for the zoom effect */
   }
 }
+
+
+
+/* Menu Dot */
+
+.nav-dots {
+  position: fixed;
+  justify-content: space-between;
+  right: -8%;
+  width: 163px;
+  top: 50%;
+  height: 150px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 22px;
+  border-radius: 10px 0 0 10px;
+  transition: background 0.3s;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.nav-dots:hover {
+  right: 0%;
+}
+
+.nav-dot-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-dot {
+  margin-right: 5px; /* Ajustez la marge entre le point et le label selon vos préférences */
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  margin-right: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.nav-dots:hover  .nav-dot{
+  display: none;
+}
+
+.nav-label {
+  color: #fff;
+  font-size: 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  opacity: 1; /* Masquer le label par défaut */
+  transition: opacity 0.3s;
+}
+
+.nav-label-web:hover {
+  color: #E02B20;
+}
+
+.nav-label-music:hover {
+  color: #0F4CE7;
+}
+
+.active .nav-dot-web  {
+  background-color: #E02B20;
+  /* Changer la couleur pour l'état actif */
+  font-size: 1.2em; /* Changer la taille pour l'état actif */
+}
+
+.active .nav-dot-music {
+  background-color: #0F4CE7;
+  /* Changer la couleur pour l'état actif */
+  font-size: 1.2em; /* Changer la taille pour l'état actif */
+}
+
+.active .nav-label .dot-web {
+  color: #E02B20;
+}
+
