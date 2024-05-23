@@ -466,6 +466,14 @@ footer p{
   }
 }
 
+.contact-section-box-img-bckgrnd {
+  width: 100%;
+}
+.first-section-box-img-bckgrnd, .contact-section-box-img-bckgrnd {
+
+overflow: hidden;
+}
+
 .first-section-box-img-bckgrnd .bckgrnd, .contact-section-box-img-bckgrnd .bckgrnd{
   animation: zoomBackground 30s ease-in-out infinite;
 }
