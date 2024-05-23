@@ -50,6 +50,7 @@ h2 {
 }
 
 h3 {
+  font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
   letter-spacing: 1.5px;
 }
 
@@ -59,8 +60,7 @@ p {
 
 hr {
   width: 10%;
-  background-color: #E02B20;
-  height: 2px;
+  height: 4px;
   border: 0px;
   margin-bottom: 40px;
 }
@@ -144,6 +144,10 @@ hr {
   left: 12%;
 }
 
+.music {
+  background-color: #0F4CE7;
+}
+
 .contents {
   display: flex;
   width: 60%;
@@ -179,6 +183,12 @@ hr {
 @media (max-width: 1111px) {
   .one-box-content {
     width: 33% ! important;
+  }
+}
+@media (max-width: 1560px) {
+  .bx-one-comp img {
+    width: 32px ! important;
+    height: 32px ! important;
   }
 }
 
@@ -290,7 +300,7 @@ p {
 h3 {
   align-items: center;
   font-weight: 900;
-  font-size: 24px;
+  font-size: 28px;
   display: flex;
   justify-content: center;
 }
@@ -366,8 +376,15 @@ h3 img {
 }
 
 a {
-  color: #E02B20;
   text-decoration: none;
+}
+
+.txt-web {
+  color: #E02B20;
+}
+
+.txt-music {
+  color: #0F4CE7;
 }
 
 .bx-all-portfolio {
@@ -389,7 +406,7 @@ a {
 
                         /*Contact*/
 .contact-section-content {
-  z-index: 100;
+  z-index: 10;
   position: absolute;
   top: 15%;
   bottom: 15%;
@@ -489,7 +506,7 @@ footer {
 
 .portfolio-section {
   position: relative;
-  z-index: 100;
+  z-index: 10;
 }
 
 .img-prtf {

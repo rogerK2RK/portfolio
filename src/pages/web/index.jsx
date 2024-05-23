@@ -13,7 +13,6 @@ import github from './imgs/icons/github.png'
 import beatstar from './imgs/icons/beatstar.png'
 import soundcloud from './imgs/icons/soundcloud.png'
 import youtube from './imgs/icons/youtube.png'
-import iconbottom from './imgs/icons/arrow-bottom.png'
 
 
 import html from './imgs/icons/html.png'
@@ -50,7 +49,7 @@ function Web() {
         <div className='first-section-content'>
           <h2 className='animated-title'>RETITA ROGER <br /> 25ANS</h2>
           <h1 className='animated-title'>Alternance Développeur Web Full Stack / Front End</h1>
-          <hr className='animated-title'/>
+          <hr className='animated-title web'/>
           <span className='animated-title'>Transformons des lignes de code en expériences visuelles.</span>
         </div>
       </section>
@@ -72,16 +71,16 @@ function Web() {
         <h2 className='animated-title'>SKILLS</h2>
         <div className='skills-section-bx-contents'>
           <div className='one-box-content'>
-            <h3><img src={iconbrush} alt="icon de crayon" />Design + Development</h3>
-            <p>Clean, modern designs, optimized for performance, search engines, and converting users to customers</p>
+            <h3><img src={iconbrush} alt="icon de crayon" />Design + Dévelopepment</h3>
+            <p>Des designs épurés et modernes, optimisés pour les performances, le référencement, et la conversion des utilisateurs en clients.</p>
           </div>
           <div className='one-box-content'>
-            <h3><img src={iconsimcard} alt="icon de crayon" />Technology</h3>
+            <h3><img src={iconsimcard} alt="icon de crayon" />Technologie</h3>
             <p>Combined all the latest technologies to a progressive website.</p>
           </div>
           <div className='one-box-content'>
-            <h3><img src={iconmobile} alt="icon de crayon" />Always Responsive</h3>
-            <p>A responsive design makes your website accesible to all users, regardless of ther device.</p>
+            <h3><img src={iconmobile} alt="icon de crayon" />Responsive</h3>
+            <p>Un design réactif garantit que votre site web est accessible à tous les utilisateurs, quel que soit leur appareil.</p>
           </div>
         </div>
         <div className='skills-section-bx-contents'>
@@ -253,7 +252,7 @@ function Web() {
       <section className='portfolio-section'>
         <div className='portfolio-head-content'>
           <h2 className='animated-title'>PORTFOLIO</h2>
-          <p>Découvrez un aperçu de mes réalisations pendant mon alternance et ma formation. Pour explorer davantage chaque projet, consultez mon profil <a href="https://github.com/rogerK2RK?tab=repositories">GitHub</a>.</p>
+          <p>Découvrez un aperçu de mes réalisations pendant mon alternance et ma formation. Pour explorer davantage chaque projet, consultez mon profil <a className='txt-web' href="https://github.com/rogerK2RK?tab=repositories">GitHub</a>.</p>
         </div>
         <div className='bx-all-portfolio'>
         <div className='bx-one-portfolio'>
@@ -297,13 +296,13 @@ function Web() {
           <hr />
           <div>
             <h3><img src={location} alt="icon location" />Adresse Postale</h3>
-            <a href="https://maps.app.goo.gl/hCJrmcsMZjsA9vKX8">1 bd Jean Baptiste Carpeaux, 95200 Sarcelles</a>
+            <a className='txt-web' href="https://maps.app.goo.gl/hCJrmcsMZjsA9vKX8">1 bd Jean Baptiste Carpeaux, 95200 Sarcelles</a>
             <h3><img src={mail} alt="icon mail" />Adresse Mail</h3>
-            <a href="https://maps.app.goo.gl/hCJrmcsMZjsA9vKX8">roger.retita@gmail.com</a>
+            <a className='txt-web' href="mailto:roger.retita@gmail.com">roger.retita@gmail.com</a>
             <h3><img src={call} alt="icon call" />Téléphone</h3>
-            <a href="tel:+33668347755">06.68.34.77.55</a>
+            <a className='txt-web' href="tel:+33668347755">06.68.34.77.55</a>
           </div>
-          <p className='mobilite'>Mobilité dans toutes la France</p>
+          <p className='mobilite'>Mobilité dans toute la France</p>
         </div>
       </section>
       <footer>
