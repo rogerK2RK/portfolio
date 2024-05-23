@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, Element } from 'react-scroll';
 
 import bckgrnd1 from './imgs/bckgrnd/Section1.png'
 import bckgrnd2 from './imgs/bckgrnd/Rectangle4.png'
@@ -49,7 +50,9 @@ function Music() {
             <p >Une fois arrivé en France, j'ai renoué avec ma passion pour la musique, plus précisément la MAO (musique assistée par ordinateur). Depuis bientôt 5 ans, je m'y adonne en autodidacte. Vous pouvez écouter certaines de mes créations sur ma chaîne YouTube. Pour moi, la création musicale exige une attention minutieuse aux détails pour garantir que le son soit optimal, que ce soit sur des écouteurs, un téléphone ou des enceintes de monitoring.</p>
             <p >Je suis une personne appliquée dans mon travail, prenant le temps nécessaire avant de finaliser un projet, peu importe le temps que cela peut prendre. M'accepter au sein de votre entreprise, c'est accepter ma curiosité et ma joie de vivre.</p>
           </div>
-          <button className='music'>Contact</button>
+          <Link to="target-section" smooth={true} duration={500}>
+            <button className='music'>Contact</button>
+          </Link>
         </div>
         <div className="box-img">
           <img src={bckgrnd2} alt="image of progremer how work" />
@@ -156,24 +159,26 @@ function Music() {
           </div>
         </div>
       </section>
-      <section className='contact-section'>
-        <div className='contact-section-box-img-bckgrnd'>
-          <img className='bckgrnd' src={bckgrnd3} alt="image of code web" />
-        </div>
-        <div className='contact-section-content'>
-          <h2 className='animated-title'>CONTACT</h2>
-          <hr />
-          <div>
-            <h3><img src={location} alt="icon location" />Adresse Postale</h3>
-            <a className='txt-music' href="https://maps.app.goo.gl/hCJrmcsMZjsA9vKX8">1 bd Jean Baptiste Carpeaux, 95200 Sarcelles</a>
-            <h3><img src={mail} alt="icon mail" />Adresse Mail</h3>
-            <a className='txt-music' href="mailto:rogonebeats@gmail.com">rogonebeats@gmail.com</a>
-            <h3><img src={call} alt="icon call" />Téléphone</h3>
-            <a className='txt-music' href="tel:+33668347755">06.68.34.77.55</a>
+      <Element name="target-section">
+        <section className='contact-section'>
+          <div className='contact-section-box-img-bckgrnd'>
+            <img className='bckgrnd' src={bckgrnd3} alt="image of code web" />
           </div>
-          <p className='mobilite'>Mobilité dans toute la France</p>
-        </div>
-      </section>
+          <div className='contact-section-content'>
+            <h2 className='animated-title'>CONTACT</h2>
+            <hr />
+            <div>
+              <h3><img src={location} alt="icon location" />Adresse Postale</h3>
+              <a className='txt-music' href="https://maps.app.goo.gl/hCJrmcsMZjsA9vKX8">1 bd Jean Baptiste Carpeaux, 95200 Sarcelles</a>
+              <h3><img src={mail} alt="icon mail" />Adresse Mail</h3>
+              <a className='txt-music' href="mailto:rogonebeats@gmail.com">rogonebeats@gmail.com</a>
+              <h3><img src={call} alt="icon call" />Téléphone</h3>
+              <a className='txt-music' href="tel:+33668347755">06.68.34.77.55</a>
+            </div>
+            <p className='mobilite'>Mobilité dans toute la France</p>
+          </div>
+        </section>
+      </Element>
       <footer>
         <p>© 2024 by RETITA Roger.</p>
         <div className='footer-bx-icon'>
