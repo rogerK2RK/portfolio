@@ -15,6 +15,7 @@ import github from './imgs/icons/github.png'
 import beatstar from './imgs/icons/beatstar.png'
 import soundcloud from './imgs/icons/soundcloud.png'
 import youtube from './imgs/icons/youtube.png'
+import linkedin from './imgs/icons/linkedin.png'
 
 
 import flstudio from './imgs/icons/flstudio.png'
@@ -178,6 +179,9 @@ function Music() {
         <div className='footer-bx-icon'>
           <a href="https://github.com/rogerK2RK?tab=repositories">
             <img src={github} alt="icon github" />
+          </a>
+          <a href="https://www.linkedin.com/in/roger-retita-9402b1197/">
+            <img src={linkedin} alt="icon linkedin" />
           </a>
           <a href="https://www.youtube.com/channel/UCDECuuPMRTnP4NWFvSC2jaA">
             <img src={youtube} alt="incon youtube" />
