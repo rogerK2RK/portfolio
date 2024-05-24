@@ -193,6 +193,15 @@ hr {
 }
 
 @media (max-width: 767px) {
+
+  .first-section-content p {
+    padding: 0 10% ! important;
+  }
+
+  .portfolio-head-content p {
+    padding: 0 11%  ! important;
+  }
+
   .one-box-content, .bx-group-comp {
     width: 100% ! important;
     padding: 0px 13%;

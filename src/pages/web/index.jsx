@@ -80,7 +80,7 @@ function Web() {
           <h2 className='animated-title'>SKILLS</h2>
           <div className='skills-section-bx-contents'>
             <div className='one-box-content'>
-              <h3><img src={iconbrush} alt="icon de crayon" />Design + Dévelopepment</h3>
+              <h3><img src={iconbrush} alt="icon de crayon" />Design + Développement</h3>
               <p>Des designs épurés et modernes, optimisés pour les performances, le référencement, et la conversion des utilisateurs en clients.</p>
             </div>
             <div className='one-box-content'>
