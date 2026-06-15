@@ -1,5 +1,5 @@
-import React  from 'react';
 import { Link, Element } from 'react-scroll';
+import { useAnimatedTitles, useBackgroundZoom, usePortfolioHover, useScrollAnimations, useSkillBars, usePortfolioReveal, useParallax, useSkillBoxHover, useContactLinks, useFooterIcons } from '../../hooks/useAnimations';
 
 
 import bckgrnd1 from './imgs/bckgrnd/Section1.png'
@@ -28,17 +28,26 @@ import premierepro from './imgs/icons/premierepro.png'
 
 
 function Music() {
- 
+  useAnimatedTitles();
+  useBackgroundZoom();
+  usePortfolioHover();
+  useScrollAnimations();
+  useSkillBars();
+  usePortfolioReveal();
+  useParallax();
+  useSkillBoxHover();
+  useContactLinks();
+  useFooterIcons();
 
   return (
     <>
       <NavDots />
       <section className="first-section">
         <div className='first-section-box-img-bckgrnd'>
-          <img className='bckgrnd' src={bckgrnd1} alt="image of progremer how work" />
+          <img className='bckgrnd' src={bckgrnd1} alt="Studio de production musicale" />
         </div>
         <div className='first-section-content'>
-          <h2 className='animated-title'>ROG ONE BEATS <br /> 25ANS</h2>
+          <h2 className='animated-title'>ROG ONE BEATS <br /> 27 ANS</h2>
           <h1 className='animated-title'>Beatmaker / Mixeur / Compositeur</h1>
           <hr className='animated-title music'/>
           <p className='animated-title'>Laissez-vous transporter par le rythme de la musique.</p>
@@ -49,16 +58,16 @@ function Music() {
           <div className="contents">
             <h2 className='animated-title'>A PROPOS</h2>
             <div className="box-text">
-              <p >Je m'appelle Roger RETITA, j'approche de mes 25 ans cette année. Né et grandi à Madagascar, j'ai toujours été passionné par l'art sous toutes ses formes. Dès mon plus jeune âge, j'ai pratiqué le dessin, puis j'ai exploré la musique sous diverses facettes : le chant, la flûte, le clavier, la guitare et la batterie. Au collège, je me suis intéressé au théâtre, rejoignant une troupe en troisième.</p>
-              <p >Une fois arrivé en France, j'ai renoué avec ma passion pour la musique, plus précisément la MAO (musique assistée par ordinateur). Depuis bientôt 5 ans, je m'y adonne en autodidacte. Vous pouvez écouter certaines de mes créations sur ma chaîne YouTube. Pour moi, la création musicale exige une attention minutieuse aux détails pour garantir que le son soit optimal, que ce soit sur des écouteurs, un téléphone ou des enceintes de monitoring.</p>
-              <p >Je suis une personne appliquée dans mon travail, prenant le temps nécessaire avant de finaliser un projet, peu importe le temps que cela peut prendre. M'accepter au sein de votre entreprise, c'est accepter ma curiosité et ma joie de vivre.</p>
+              <p>Je m'appelle Roger RETITA, j'ai 27 ans. Né et grandi à Madagascar, j'ai toujours été passionné par l'art sous toutes ses formes. Dès mon plus jeune âge, j'ai pratiqué le dessin, puis j'ai exploré la musique sous diverses facettes : le chant, la flûte, le clavier, la guitare et la batterie. Au collège, je me suis intéressé au théâtre, rejoignant une troupe en troisième.</p>
+              <p>Une fois arrivé en France, j'ai renoué avec ma passion pour la musique, plus précisément la MAO (musique assistée par ordinateur). Depuis plus de six ans, je m'y adonne en autodidacte. Vous pouvez écouter certaines de mes créations sur ma chaîne YouTube. Pour moi, la création musicale exige une attention minutieuse aux détails pour garantir que le son soit optimal, que ce soit sur des écouteurs, un téléphone ou des enceintes de monitoring.</p>
+              <p>Je suis une personne appliquée dans mon travail, prenant le temps nécessaire avant de finaliser un projet, peu importe le temps que cela peut prendre. Travailler avec moi, c'est s'entourer de ma curiosité et de ma joie de vivre.</p>
             </div>
             <Link to="contact" smooth={true} duration={500}>
               <button className='music'>Contact</button>
             </Link>
           </div>
           <div className="box-img">
-            <img src={bckgrnd2} alt="image of progremer how work" />
+            <img src={bckgrnd2} alt="Rog One Beats en studio" />
           </div>
         </section>
       </Element>
@@ -78,7 +87,7 @@ function Music() {
           <div className='skills-section-bx-contents'>
             <div className='bx-group-comp'>
               <div className='bx-one-comp'>
-                <img src={flstudio} alt="icon html" />
+                <img src={flstudio} alt="icône FL Studio" />
                 <div className='bx-one-comp-content'>
                   <div className='bx-one-comp-infos'>
                     <p>FL Studio</p>
@@ -93,7 +102,7 @@ function Music() {
             </div>
             <div className='bx-group-comp'>
               <div className='bx-one-comp'>
-                <img src={protools} alt="icon html" />
+                <img src={protools} alt="icône Pro Tools" />
                 <div className='bx-one-comp-content'>
                   <div className='bx-one-comp-infos'>
                     <p>Pro Tools</p>
@@ -108,7 +117,7 @@ function Music() {
             </div>
             <div className='bx-group-comp'>
               <div className='bx-one-comp'>
-                <img src={premierepro} alt="icon figma" />
+                <img src={premierepro} alt="icône Premiere Pro" />
                 <div className='bx-one-comp-content'>
                   <div className='bx-one-comp-infos'>
                     <p>Premiere Pro</p>
@@ -123,7 +132,7 @@ function Music() {
             </div>
             <div className='bx-group-comp'>
               <div className='bx-one-comp'>
-                <img src={photoshop} alt="icon figma" />
+                <img src={photoshop} alt="icône Photoshop" />
                 <div className='bx-one-comp-content'>
                   <div className='bx-one-comp-infos'>
                     <p>Photoshop</p>
@@ -147,22 +156,22 @@ function Music() {
           </div>
           <div className='bx-all-portfolio'>
             <div className='bx-one-portfolio'>
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/EAe9R1XxQ2c" title="[FREE] Tayc x Dadju x Teni Type Beat - &quot; Maeva &quot; | Instru Afro Love 2024" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/EAe9R1XxQ2c" title="[FREE] Tayc x Dadju x Teni Type Beat - &quot; Maeva &quot; | Instru Afro Love 2024" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
             </div>
             <div className='bx-one-portfolio'>
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wf8e1FvriCo" title="[FREE] Ckay x Rema x Oxlade x Omah Lay x Tayc Type Beat - &quot; Slowly &quot; | Instru Afro Love 2024" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wf8e1FvriCo" title="[FREE] Ckay x Rema x Oxlade x Omah Lay x Tayc Type Beat - &quot; Slowly &quot; | Instru Afro Love 2024" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
             </div>
             <div className='bx-one-portfolio'>
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Y9yoh8HDPtE" title="[FREE] Dadju x Tayc x Rema x Aya Nakamura x Victony Type Beat - &quot; Sugar &quot; | Instru Afro Love 2024" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Y9yoh8HDPtE" title="[FREE] Dadju x Tayc x Rema x Aya Nakamura x Victony Type Beat - &quot; Sugar &quot; | Instru Afro Love 2024" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
             </div>
             <div className='bx-one-portfolio'>
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bsKZGSoZPGY" title="[FREE] Teni x Rema x Oxlade x Tyla Type Beat - &quot; Jollof &quot; | Instru Afro Love 2024" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bsKZGSoZPGY" title="[FREE] Teni x Rema x Oxlade x Tyla Type Beat - &quot; Jollof &quot; | Instru Afro Love 2024" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
             </div>
             <div className='bx-one-portfolio'>
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/rd9gOr59KbI" title="&quot;Andando Pela Orla&quot; Gabriel Won [Slowed] Rog One Beats @gabrielwon" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/rd9gOr59KbI" title="&quot;Andando Pela Orla&quot; Gabriel Won [Slowed] Rog One Beats @gabrielwon" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
             </div>
             <div className='bx-one-portfolio'>
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/LDdPd1BuTJk" title="[FREE]  Khaid x Nasboy x Davido x Wande Coal Type Beat - &quot; Anabella &quot; | Instru Afro Love 2024" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/LDdPd1BuTJk" title="[FREE]  Khaid x Nasboy x Davido x Wande Coal Type Beat - &quot; Anabella &quot; | Instru Afro Love 2024" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
             </div>
           </div>
         </section>
@@ -188,7 +197,7 @@ function Music() {
         </section>
       </Element>
       <footer>
-        <p>© 2024 by RETITA Roger.</p>
+        <p>© 2026 by RETITA Roger.</p>
         <div className='footer-bx-icon'>
           <a href="https://github.com/rogerK2RK?tab=repositories">
             <img src={github} alt="icon github" />
@@ -197,7 +206,7 @@ function Music() {
             <img src={linkedin} alt="icon linkedin" />
           </a>
           <a href="https://www.youtube.com/channel/UCDECuuPMRTnP4NWFvSC2jaA">
-            <img src={youtube} alt="incon youtube" />
+            <img src={youtube} alt="icône youtube" />
           </a>
           <a href="https://soundcloud.com/user-406770951">
             <img src={soundcloud} alt="icon soundcloud" />

@@ -1,5 +1,5 @@
-import React, { useState }  from 'react';
 import { Link, Element } from 'react-scroll';
+import { useAnimatedTitles, useBackgroundZoom, usePortfolioHover, useScrollAnimations, useSkillBars, usePortfolioReveal, useParallax, useSkillBoxHover, useContactLinks, useFooterIcons } from '../../hooks/useAnimations';
 
 import bckgrnd1 from './imgs/bckgrnd/bckgrnd-web1.png'
 import bckgrnd2 from './imgs/bckgrnd/bckgrnd-web2.png'
@@ -40,7 +40,16 @@ import ohmyfood from './imgs/prtfl/rogerk2rk.github.io_P3_01_lienGithub_index.ht
 
 
 function Web() {
- 
+  useAnimatedTitles();
+  useBackgroundZoom();
+  usePortfolioHover();
+  useScrollAnimations();
+  useSkillBars();
+  usePortfolioReveal();
+  useParallax();
+  useSkillBoxHover();
+  useContactLinks();
+  useFooterIcons();
 
   return (
     <>
@@ -48,11 +57,11 @@ function Web() {
       <section className="first-section">
         
         <div className='first-section-box-img-bckgrnd'>
-          <img className='bckgrnd' src={bckgrnd1} alt="image of progremer how work" />
+          <img className='bckgrnd' src={bckgrnd1} alt="Développeur web au travail devant son écran" />
         </div>
         <div className='first-section-content'>
-          <h2 className='animated-title'>RETITA ROGER <br /> 25ANS</h2>
-          <h1 className='animated-title'>Alternance Développeur Web Full Stack / Front End</h1>
+          <h2 className='animated-title'>RETITA ROGER <br /> 27 ANS</h2>
+          <h1 className='animated-title'>Développeur Web Full Stack</h1>
           <hr className='animated-title web'/>
           <p className='animated-title'>Transformons des lignes de code en expériences visuelles.</p>
         </div>
@@ -62,16 +71,16 @@ function Web() {
           <div className="contents">
             <h2 className='animated-title'>A PROPOS</h2>
             <div className="box-text">
-              <p >Je m'appelle Roger RETITA, j'approche de mes 25 ans cette année. Né et grandi à Madagascar, je suis une personne naturellement curieuse, aimant découvrir de nouvelles choses. En arrivant en France, j'ai développé une passion pour le développement web, que j'aborde avec la même rigueur et précision que mes autres intérêts artistiques.</p>
-              <p >Pour moi, le développement web ne diffère pas tant de la création musicale. Dans les deux domaines, il est crucial de veiller à ce que le travail soit bien présenté et accessible sur tous les supports, que ce soit une tablette, un ordinateur ou un téléphone. Cette attention au détail assure une expérience utilisateur optimale, quelle que soit la plateforme utilisée.</p>
-              <p >Je suis une personne appliquée dans mon travail, prenant le temps nécessaire avant de finaliser un projet, peu importe le temps que cela peut prendre. M'accepter au sein de votre entreprise, c'est accepter ma curiosité et ma joie de vivre.</p>
+              <p>Je m'appelle Roger RETITA, j'ai 27 ans. Né et grandi à Madagascar, je suis une personne naturellement curieuse, aimant découvrir de nouvelles choses. En arrivant en France, j'ai développé une passion pour le développement web, que j'aborde avec la même rigueur et précision que mes autres intérêts artistiques. Aujourd'hui développeur web full stack, j'en ai fait mon métier.</p>
+              <p>Pour moi, le développement web ne diffère pas tant de la création musicale. Dans les deux domaines, il est crucial de veiller à ce que le travail soit bien présenté et accessible sur tous les supports, que ce soit une tablette, un ordinateur ou un téléphone. Cette attention au détail assure une expérience utilisateur optimale, quelle que soit la plateforme utilisée.</p>
+              <p>Je suis une personne appliquée dans mon travail, prenant le temps nécessaire avant de finaliser un projet, peu importe le temps que cela peut prendre. Travailler avec moi, c'est s'entourer de ma curiosité et de ma joie de vivre.</p>
             </div>
             <Link to="contact" smooth={true} duration={500}>
               <button className='web'>Contact</button>
             </Link>
           </div>
           <div className="box-img">
-            <img src={bckgrnd2} alt="image of progremer how work" />
+            <img src={bckgrnd2} alt="Roger Retita, développeur web" />
           </div>
         </section>
       </Element>
@@ -84,8 +93,8 @@ function Web() {
               <p>Des designs épurés et modernes, optimisés pour les performances, le référencement, et la conversion des utilisateurs en clients.</p>
             </div>
             <div className='one-box-content'>
-              <h3><img src={iconsimcard} alt="icon de crayon" />Technologie</h3>
-              <p>Combined all the latest technologies to a progressive website.</p>
+              <h3><img src={iconsimcard} alt="icône technologie" />Technologie</h3>
+              <p>Des sites modernes et évolutifs, construits avec les dernières technologies du web.</p>
             </div>
             <div className='one-box-content'>
               <h3><img src={iconmobile} alt="icon de crayon" />Responsive</h3>
@@ -319,7 +328,7 @@ function Web() {
         </section>
       </Element>
       <footer>
-        <p>© 2024 by RETITA Roger.</p>
+        <p>© 2026 by RETITA Roger.</p>
         <div className='footer-bx-icon'>
           <a href="https://github.com/rogerK2RK?tab=repositories">
             <img src={github} alt="icon github" />
@@ -328,7 +337,7 @@ function Web() {
             <img src={linkedin} alt="icon linkedin" />
           </a>
           <a href="https://www.youtube.com/channel/UCDECuuPMRTnP4NWFvSC2jaA">
-            <img src={youtube} alt="incon youtube" />
+            <img src={youtube} alt="icône youtube" />
           </a>
           <a href="https://soundcloud.com/user-406770951">
             <img src={soundcloud} alt="icon soundcloud" />
