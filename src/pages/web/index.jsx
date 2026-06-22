@@ -1,385 +1,243 @@
 import { Link, Element } from 'react-scroll';
-import { useAnimatedTitles, useBackgroundZoom, usePortfolioHover, useScrollAnimations, useSkillBars, usePortfolioReveal, useParallax, useSkillBoxHover, useContactLinks, useFooterIcons } from '../../hooks/useAnimations';
+import { useEditorial } from '../../hooks/useAnimations';
+import NavIndex from '../../components/navIndex/index.jsx';
+import SplitText from '../../components/splitText/index.jsx';
 
-import bckgrnd1 from './imgs/bckgrnd/bckgrnd-web1.png'
-import bckgrnd2 from './imgs/bckgrnd/bckgrnd-web2.png'
-import bckgrnd3 from './imgs/bckgrnd/bckgrnd-web3.png'
-// import bckgrnd3 from './imgs/bckgrnd/bckgrnd-web3.png'
-import iconbrush from './imgs/icons/brush-2.png'
-import iconsimcard from './imgs/icons/simcard.png'
-import iconmobile from './imgs/icons/mobile.png'
-import location from './imgs/icons/location.png'
-import mail from './imgs/icons/sms.png'
-import call from './imgs/icons/call.png'
-import github from './imgs/icons/github.png'
-import beatstar from './imgs/icons/beatstar.png'
-import soundcloud from './imgs/icons/soundcloud.png'
-import youtube from './imgs/icons/youtube.png'
-import linkedin from './imgs/icons/linkedin.png'
+import bckgrnd1 from './imgs/bckgrnd/bckgrnd-web1.png';
+import bckgrnd2 from './imgs/bckgrnd/bckgrnd-web2.png';
+import bckgrnd3 from './imgs/bckgrnd/bckgrnd-web3.png';
 
+import github from './imgs/icons/github.png';
+import beatstar from './imgs/icons/beatstar.png';
+import soundcloud from './imgs/icons/soundcloud.png';
+import youtube from './imgs/icons/youtube.png';
+import linkedin from './imgs/icons/linkedin.png';
 
-import html from './imgs/icons/html.png'
-import css from './imgs/icons/css.png'
-import javascript from './imgs/icons/javascript.png'
-import jquery from './imgs/icons/jquery.png'
-import react from './imgs/icons/react.png'
-import wordpress from './imgs/icons/wordpress.png'
-import prestashop from './imgs/icons/prestashop.png'
-import wix from './imgs/icons/wix.png'
-import figma from './imgs/icons/figma.png'
-import photoshop from './imgs/icons/photoshop.png'
-import premierepro from './imgs/icons/premierepro.png'
-import vscode from './imgs/icons/vscode.png'
-import doohit from './imgs/prtfl/doohit.fr_.png'
-import gameone from './imgs/prtfl/rogerk2rk.github.io_P4_RETITA_Roger_.png'
-import photographe from './imgs/prtfl/rogerk2rk.github.io_P6_Retita_Roger_.png'
-import portfolio from './imgs/prtfl/rogerretita.editorx.io_mysite.png'
-import harmonia from './imgs/prtfl/127.0.0.1_5500_index.html.png'
-import ohmyfood from './imgs/prtfl/rogerk2rk.github.io_P3_01_lienGithub_index.html.png'
+import doohit from './imgs/prtfl/doohit.fr_.png';
+import gameone from './imgs/prtfl/rogerk2rk.github.io_P4_RETITA_Roger_.png';
+import photographe from './imgs/prtfl/rogerk2rk.github.io_P6_Retita_Roger_.png';
+import portfolio from './imgs/prtfl/rogerretita.editorx.io_mysite.png';
+import harmonia from './imgs/prtfl/127.0.0.1_5500_index.html.png';
+import ohmyfood from './imgs/prtfl/rogerk2rk.github.io_P3_01_lienGithub_index.html.png';
 
+const STACK = [
+  { cat: 'Front', items: ['JavaScript', 'React', 'Next.js'] },
+  { cat: 'Back', items: ['Node.js'] },
+  { cat: 'CMS', items: ['WordPress', 'Elementor', 'PrestaShop'] },
+  { cat: 'Design', items: ['Figma'] },
+  { cat: 'Outils', items: ['VS Code', 'ChatGPT', 'Claude Code'] },
+  { cat: 'Marketing', items: ['Brevo', 'Connectif'] }
+];
 
+const STATEMENTS = [
+  { n: '01', title: 'Front-end', text: "Des interfaces modernes en JavaScript (React, Next.js), pensées pour la performance et la conversion." },
+  { n: '02', title: 'Back & CMS', text: 'Du sur-mesure avec Node.js, ou des sites évolutifs sous WordPress, Elementor et PrestaShop.' },
+  { n: '03', title: 'Marketing', text: "De l'emailing à l'automatisation (Brevo, Connectif) pour transformer le trafic en clients." }
+];
+
+const WORK = [
+  { img: portfolio, url: 'https://rogerretita.editorx.io/mysite', name: 'Portfolio', tag: 'Site vitrine ↗' },
+  { img: doohit, url: 'https://doohit.fr/', name: 'Doohit', tag: 'Plateforme ↗' },
+  { img: ohmyfood, url: 'https://rogerk2rk.github.io/P3_01_lienGithub/index.html', name: 'Ohmyfood', tag: 'Animation CSS ↗' },
+  { img: photographe, url: 'https://rogerk2rk.github.io/P6_Retita_Roger/', name: 'Photographe', tag: 'Site photo ↗' },
+  { img: harmonia, url: 'https://rogerk2rk.github.io/projetfinal-semaine1/', name: 'Harmonia', tag: 'Projet final ↗' },
+  { img: gameone, url: 'https://rogerk2rk.github.io/P4_RETITA_Roger/', name: 'Game One', tag: 'Landing ↗' }
+];
+
+const NAV = [
+  { name: 'about', label: 'À propos' },
+  { name: 'skills', label: 'Compétences' },
+  { name: 'portfolio', label: 'Portfolio' },
+  { name: 'contact', label: 'Contact' }
+];
+
+const MARQUEE = ['HTML', 'CSS', 'JavaScript', 'React', 'WordPress', 'Figma', 'UI / UX', 'Full Stack'];
 
 function Web() {
-  useAnimatedTitles();
-  useBackgroundZoom();
-  usePortfolioHover();
-  useScrollAnimations();
-  useSkillBars();
-  usePortfolioReveal();
-  useParallax();
-  useSkillBoxHover();
-  useContactLinks();
-  useFooterIcons();
+  useEditorial();
 
   return (
-    <>
-      <NavDots />
-      <section className="first-section">
-        
-        <div className='first-section-box-img-bckgrnd'>
-          <img className='bckgrnd' src={bckgrnd1} alt="Développeur web au travail devant son écran" />
+    <div className="page page--web">
+      <NavIndex sections={NAV} />
+
+      {/* ---------- HERO ---------- */}
+      <header className="hero">
+        <div className="hero__meta eyebrow js-hero-meta">
+          <span>Lille · FR</span>
+          <span>Full Stack</span>
+          <span className="accent">(00 — Accueil)</span>
         </div>
-        <div className='first-section-content'>
-          <h2 className='animated-title'>RETITA ROGER <br /> 27 ANS</h2>
-          <h1 className='animated-title'>Développeur Web Full Stack</h1>
-          <hr className='animated-title web'/>
-          <p className='animated-title'>Transformons des lignes de code en expériences visuelles.</p>
+
+        <div className="hero__grid">
+          <div className="hero__type">
+            <p className="hero__kicker eyebrow js-hero-fade">Retita Roger · 27 ans</p>
+            <h1 className="hero__title">
+              <span className="line"><span className="js-line" aria-label="Développeur"><SplitText text="Développeur" /></span></span>
+              <span className="line"><span className="js-line" aria-label="Intégrateur"><SplitText text="Intégrateur" /></span></span>
+              <span className="line"><span className="js-line stroke" aria-label="Web Full"><SplitText text="Web Full" /></span></span>
+              <span className="line"><span className="js-line" aria-label="Stack">
+                <SplitText text="Stack" /><span className="mark char" aria-hidden="true">.</span>
+              </span></span>
+            </h1>
+            <p className="hero__lead js-hero-fade">
+              Transformons des lignes de code en expériences visuelles.
+            </p>
+          </div>
+
+          <figure className="hero__media js-hero-media js-parallax">
+            <img src={bckgrnd1} alt="Développeur web au travail devant son écran" />
+            <figcaption>Fig. 01 — At work</figcaption>
+          </figure>
         </div>
-      </section>
+
+        <div className="marquee" aria-hidden="true">
+          <div className="marquee__track">
+            {[...MARQUEE, ...MARQUEE].map((word, i) => (
+              <span key={i}>{word}<span className="dot"> ✦ </span></span>
+            ))}
+          </div>
+        </div>
+      </header>
+
+      {/* ---------- À PROPOS ---------- */}
       <Element name="about">
-        <section className="apropos-section">
-          <div className="contents">
-            <h2 className='animated-title'>A PROPOS</h2>
-            <div className="box-text">
-              <p>Je m'appelle Roger RETITA, j'ai 27 ans. Né et grandi à Madagascar, je suis une personne naturellement curieuse, aimant découvrir de nouvelles choses. En arrivant en France, j'ai développé une passion pour le développement web, que j'aborde avec la même rigueur et précision que mes autres intérêts artistiques. Aujourd'hui développeur web full stack, j'en ai fait mon métier.</p>
-              <p>Pour moi, le développement web ne diffère pas tant de la création musicale. Dans les deux domaines, il est crucial de veiller à ce que le travail soit bien présenté et accessible sur tous les supports, que ce soit une tablette, un ordinateur ou un téléphone. Cette attention au détail assure une expérience utilisateur optimale, quelle que soit la plateforme utilisée.</p>
-              <p>Je suis une personne appliquée dans mon travail, prenant le temps nécessaire avant de finaliser un projet, peu importe le temps que cela peut prendre. Travailler avec moi, c'est s'entourer de ma curiosité et de ma joie de vivre.</p>
-            </div>
-            <Link to="contact" smooth={true} duration={500}>
-              <button className='web'>Contact</button>
-            </Link>
+        <section className="block">
+          <div className="block__head">
+            <span className="block__num">01</span>
+            <h2 className="block__title js-clip">À&nbsp;Propos</h2>
           </div>
-          <div className="box-img">
+          <div className="about__body">
+            <div className="about__lead js-mask">
+              <p className="js-mask-line">Né à Madagascar,</p>
+              <p className="js-mask-line">développeur <span className="accent">par passion</span></p>
+              <p className="js-mask-line">en France.</p>
+            </div>
+            <div className="about__cols" data-reveal>
+              <p>Je m&apos;appelle Roger RETITA, j&apos;ai 27 ans. Né et grandi à Madagascar, je suis une personne naturellement curieuse, aimant découvrir de nouvelles choses. En arrivant en France, j&apos;ai développé une passion pour le développement web, que j&apos;aborde avec la même rigueur et précision que mes autres intérêts artistiques. Aujourd&apos;hui développeur web full stack, j&apos;en ai fait mon métier.</p>
+              <p>Pour moi, le développement web ne diffère pas tant de la création musicale. Dans les deux domaines, il est crucial que le travail soit bien présenté et accessible sur tous les supports — tablette, ordinateur ou téléphone. Cette attention au détail assure une expérience utilisateur optimale.</p>
+              <p>Je suis une personne appliquée, prenant le temps nécessaire avant de finaliser un projet. Travailler avec moi, c&apos;est s&apos;entourer de ma curiosité et de ma joie de vivre.</p>
+              <Link to="contact" smooth={true} duration={600}>
+                <button className="btn" data-magnetic>Prendre contact <span className="arrow">→</span></button>
+              </Link>
+            </div>
+          </div>
+          <figure className="about__media js-parallax" data-reveal>
             <img src={bckgrnd2} alt="Roger Retita, développeur web" />
-          </div>
+          </figure>
         </section>
       </Element>
+
+      {/* ---------- COMPÉTENCES ---------- */}
       <Element name="skills">
-        <section className="skills-section">
-          <h2 className='animated-title'>SKILLS</h2>
-          <div className='skills-section-bx-contents'>
-            <div className='one-box-content'>
-              <h3><img src={iconbrush} alt="icon de crayon" />Design + Développement</h3>
-              <p>Des designs épurés et modernes, optimisés pour les performances, le référencement, et la conversion des utilisateurs en clients.</p>
-            </div>
-            <div className='one-box-content'>
-              <h3><img src={iconsimcard} alt="icône technologie" />Technologie</h3>
-              <p>Des sites modernes et évolutifs, construits avec les dernières technologies du web.</p>
-            </div>
-            <div className='one-box-content'>
-              <h3><img src={iconmobile} alt="icon de crayon" />Responsive</h3>
-              <p>Un design réactif garantit que votre site web est accessible à tous les utilisateurs, quel que soit leur appareil.</p>
-            </div>
+        <section className="block">
+          <div className="block__head">
+            <span className="block__num">02</span>
+            <h2 className="block__title js-clip">Compétences</h2>
           </div>
-          <div className='skills-section-bx-contents'>
-            <div className='bx-group-comp'>
-              <div className='bx-one-comp'>
-                <img src={html} alt="icon html" />
-                <div className='bx-one-comp-content'>
-                  <div className='bx-one-comp-infos'>
-                    <p>HTML</p>
-                    <p>90%</p>
-                  </div>
-                  <div className='progress-container'>
-                    <div className="progress-bar web" style={{width: '90%'}}>
-                    </div>
-                  </div>
-                </div>
+
+          <div className="statements">
+            {STATEMENTS.map((s) => (
+              <div className="statement" data-reveal key={s.n}>
+                <span className="statement__num">{s.n}</span>
+                <h3>{s.title}</h3>
+                <p>{s.text}</p>
               </div>
-              <div className='bx-one-comp'>
-                <img src={css} alt="icon css" />
-                <div className='bx-one-comp-content'>
-                  <div className='bx-one-comp-infos'>
-                    <p>CSS</p>
-                    <p>85%</p>
-                  </div>
-                  <div className='progress-container'>
-                    <div className="progress-bar web" style={{width: '85%'}}>
-                    </div>
-                  </div>
-                </div>
+            ))}
+          </div>
+
+          <div className="stack">
+            {STACK.map((g) => (
+              <div className="stack__row" data-reveal key={g.cat}>
+                <span className="stack__cat">{g.cat}</span>
+                <p className="stack__items">
+                  {g.items.map((it, i) => (
+                    <span className="stack__item" key={it}>
+                      {it}
+                      {i < g.items.length - 1 && <span className="sep"> / </span>}
+                    </span>
+                  ))}
+                </p>
               </div>
-              <div className='bx-one-comp'>
-                <img src={javascript} alt="icon javascript" />
-                <div className='bx-one-comp-content'>
-                  <div className='bx-one-comp-infos'>
-                    <p>JavaScript</p>
-                    <p>80%</p>
-                  </div>
-                  <div className='progress-container'>
-                    <div className="progress-bar web" style={{width: '80%'}}>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className='bx-one-comp'>
-                <img src={jquery} alt="icon jquery" />
-                <div className='bx-one-comp-content'>
-                  <div className='bx-one-comp-infos'>
-                    <p>JQuery</p>
-                    <p>49%</p>
-                  </div>
-                  <div className='progress-container'>
-                    <div className="progress-bar web" style={{width: '49%'}}>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='bx-group-comp'>
-              <div className='bx-one-comp'>
-                <img src={react} alt="icon html" />
-                <div className='bx-one-comp-content'>
-                  <div className='bx-one-comp-infos'>
-                    <p>React(Redux)</p>
-                    <p>75%</p>
-                  </div>
-                  <div className='progress-container'>
-                    <div className="progress-bar web" style={{width: '75%'}}>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className='bx-one-comp'>
-                <img src={wordpress} alt="icon wordpress" />
-                <div className='bx-one-comp-content'>
-                  <div className='bx-one-comp-infos'>
-                    <p>WordPress</p>
-                    <p>80%</p>
-                  </div>
-                  <div className='progress-container'>
-                    <div className="progress-bar web" style={{width: '80%'}}>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className='bx-one-comp'>
-                <img src={prestashop} alt="icon prestashop" />
-                <div className='bx-one-comp-content'>
-                  <div className='bx-one-comp-infos'>
-                    <p>PrestaShop</p>
-                    <p>40%</p>
-                  </div>
-                  <div className='progress-container'>
-                    <div className="progress-bar web" style={{width: '40%'}}>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className='bx-one-comp'>
-                <img src={wix} alt="icon wix" />
-                <div className='bx-one-comp-content'>
-                  <div className='bx-one-comp-infos'>
-                    <p>Wix</p>
-                    <p>50%</p>
-                  </div>
-                  <div className='progress-container'>
-                    <div className="progress-bar web" style={{width: '50%'}}>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='bx-group-comp'>
-              <div className='bx-one-comp'>
-                <img src={figma} alt="icon figma" />
-                <div className='bx-one-comp-content'>
-                  <div className='bx-one-comp-infos'>
-                    <p>Figma</p>
-                    <p>60%</p>
-                  </div>
-                  <div className='progress-container'>
-                    <div className="progress-bar web" style={{width: '60%'}}>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className='bx-one-comp'>
-                <img src={photoshop} alt="icon photoshop" />
-                <div className='bx-one-comp-content'>
-                  <div className='bx-one-comp-infos'>
-                    <p>Photoshop</p>
-                    <p>56%</p>
-                  </div>
-                  <div className='progress-container'>
-                    <div className="progress-bar web" style={{width: '56%'}}>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className='bx-one-comp'>
-                <img src={premierepro} alt="icon premierepro" />
-                <div className='bx-one-comp-content'>
-                  <div className='bx-one-comp-infos'>
-                    <p>Première Pro</p>
-                    <p>62%</p>
-                  </div>
-                  <div className='progress-container'>
-                    <div className="progress-bar web" style={{width: '62%'}}>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className='bx-one-comp'>
-                <img src={vscode} alt="icon vscode" />
-                <div className='bx-one-comp-content'>
-                  <div className='bx-one-comp-infos'>
-                    <p>Vs Code</p>
-                    <p>80%</p>
-                  </div>
-                  <div className='progress-container'>
-                    <div className="progress-bar web" style={{width: '80%'}}>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </section>
       </Element>
+
+      {/* ---------- PORTFOLIO ---------- */}
       <Element name="portfolio">
-        <section className='portfolio-section'>
-          <div className='portfolio-head-content'>
-            <h2 className='animated-title'>PORTFOLIO</h2>
-            <p>Découvrez un aperçu de mes réalisations pendant mon alternance et ma formation. Pour explorer davantage chaque projet, consultez mon profil <a className='txt-web' href="https://github.com/rogerK2RK?tab=repositories">GitHub</a>.</p>
+        <section className="block block--work">
+          <div className="block__head">
+            <span className="block__num">03</span>
+            <h2 className="block__title js-clip">Portfolio</h2>
           </div>
-          <div className='bx-all-portfolio'>
-          <div className='bx-one-portfolio'>
-              <a href="https://rogerretita.editorx.io/mysite">
-                <img src={portfolio} className='img-prtf' alt=" minature site portfolio" />
+          <p className="work-intro" data-reveal>
+            Un aperçu de mes réalisations pendant mon alternance et ma formation. Pour explorer
+            davantage chaque projet, consultez mon profil{' '}
+            <a href="https://github.com/rogerK2RK?tab=repositories">GitHub</a>.
+          </p>
+          <div className="work-grid">
+            {WORK.map((w, i) => (
+              <a className="work-item" href={w.url} target="_blank" rel="noreferrer" data-reveal key={w.name}>
+                <div className="work-item__frame">
+                  <img src={w.img} alt={`Aperçu du projet ${w.name}`} />
+                </div>
+                <div className="work-item__bar">
+                  <span className="name">{String(i + 1).padStart(2, '0')} / {w.name}</span>
+                  <span className="tag">{w.tag}</span>
+                </div>
               </a>
-            </div>
-            <div className='bx-one-portfolio'>
-              <a href="https://doohit.fr/">
-                <img src={doohit} className='img-prtf' alt=" minature site doohit" />
-              </a>
-            </div>
-            <div className='bx-one-portfolio'>
-              <a href="https://rogerk2rk.github.io/P3_01_lienGithub/index.html">
-                <img src={ohmyfood} className='img-prtf' alt=" minature site oh My food" />
-              </a>
-            </div>
-            <div className='bx-one-portfolio'>
-              <a href="https://rogerk2rk.github.io/P6_Retita_Roger/">
-                <img src={photographe} className='img-prtf' alt=" minature site photographe" />
-              </a>
-            </div>
-            <div className='bx-one-portfolio'>
-              <a href="https://rogerk2rk.github.io/projetfinal-semaine1/">
-                <img src={harmonia} className='img-prtf' alt=" minature site harmonia" />
-              </a>
-            </div>
-            <div className='bx-one-portfolio'>
-              <a href="https://rogerk2rk.github.io/P4_RETITA_Roger/">
-                <img src={gameone} className='img-prtf' alt=" minature site gameone" />
-              </a>
-            </div>
+            ))}
           </div>
         </section>
       </Element>
+
+      {/* ---------- CONTACT ---------- */}
       <Element name="contact">
-        <section className='contact-section'>
-          <div className='contact-section-box-img-bckgrnd'>
-            <img className='bckgrnd' src={bckgrnd3} alt="image of code web" />
+        <section className="block block--contact">
+          <div className="contact__bg js-parallax">
+            <img src={bckgrnd3} alt="" />
           </div>
-          <div className='contact-section-content'>
-            <h2 className='animated-title'>CONTACT</h2>
-            <hr />
-            <div>
-              <h3><img src={location} alt="icon location" />Adresse Postale</h3>
-              <a className='txt-web' href="https://maps.app.goo.gl/hCJrmcsMZjsA9vKX8">1 bd Jean Baptiste Carpeaux, 95200 Sarcelles</a>
-              <h3><img src={mail} alt="icon mail" />Adresse Mail</h3>
-              <a className='txt-web' href="mailto:roger.retita@gmail.com">roger.retita@gmail.com</a>
-              <h3><img src={call} alt="icon call" />Téléphone</h3>
-              <a className='txt-web' href="tel:+33668347755">06.68.34.77.55</a>
+          <div className="contact__inner">
+            <div className="block__head">
+              <span className="block__num">04</span>
+              <h2 className="block__title js-clip">Contact</h2>
             </div>
-            <p className='mobilite'>Mobilité dans toute la France</p>
+            <a className="contact__mail" href="mailto:roger.retita@gmail.com" data-reveal>
+              roger.retita@gmail.com
+            </a>
+            <div className="contact__rows">
+              <div className="contact__row" data-reveal>
+                <span className="label">Adresse</span>
+                <p>Lille, France</p>
+              </div>
+              <div className="contact__row" data-reveal>
+                <span className="label">Téléphone</span>
+                <a href="tel:+33668347755">06 68 34 77 55</a>
+              </div>
+              <div className="contact__row" data-reveal>
+                <span className="label">Mobilité</span>
+                <p>Disponible dans toute la France</p>
+              </div>
+            </div>
           </div>
         </section>
       </Element>
-      <footer>
-        <p>© 2026 by RETITA Roger.</p>
-        <div className='footer-bx-icon'>
-          <a href="https://github.com/rogerK2RK?tab=repositories">
-            <img src={github} alt="icon github" />
-          </a>
-          <a href="https://www.linkedin.com/in/roger-retita-9402b1197/">
-            <img src={linkedin} alt="icon linkedin" />
-          </a>
-          <a href="https://www.youtube.com/channel/UCDECuuPMRTnP4NWFvSC2jaA">
-            <img src={youtube} alt="icône youtube" />
-          </a>
-          <a href="https://soundcloud.com/user-406770951">
-            <img src={soundcloud} alt="icon soundcloud" />
-          </a>
-          <a href="https://www.beatstars.com/rogerretita14426">
-            <img src={beatstar} alt="icon beatstar" />
-          </a>
+
+      {/* ---------- FOOTER ---------- */}
+      <footer className="footer">
+        <div className="footer__strip">
+          <p className="footer__credit">© 2026 — Retita Roger / Conçu &amp; développé maison</p>
+          <div className="footer__socials">
+            <a href="https://github.com/rogerK2RK?tab=repositories" aria-label="GitHub"><img src={github} alt="GitHub" /></a>
+            <a href="https://www.linkedin.com/in/roger-retita-9402b1197/" aria-label="LinkedIn"><img src={linkedin} alt="LinkedIn" /></a>
+            <a href="https://www.youtube.com/channel/UCDECuuPMRTnP4NWFvSC2jaA" aria-label="YouTube"><img src={youtube} alt="YouTube" /></a>
+            <a href="https://soundcloud.com/user-406770951" aria-label="SoundCloud"><img src={soundcloud} alt="SoundCloud" /></a>
+            <a href="https://www.beatstars.com/rogerretita14426" aria-label="BeatStars"><img src={beatstar} alt="BeatStars" /></a>
+          </div>
         </div>
       </footer>
-    </>
-  );
-}
-
-const NavDots = () => {
-  const sections = [
-    { name: 'about', label: 'À PROPOS' },
-    { name: 'skills', label: 'SKILLS' },
-    { name: 'portfolio', label: 'PORTFOLIO' },
-    { name: 'contact', label: 'CONTACT' }
-  ];
-
-  return (
-    <div
-      className={`nav-dots `}
-    >
-      {sections.map(section => (
-        <Link
-          key={section.name}
-          to={section.name}
-          smooth={true}
-          duration={500}
-          activeClass="active"
-          spy={true}
-        >
-          <div className="nav-dot-container">
-            <div className="nav-dot nav-dot-web"></div>
-            <p className="nav-label nav-label-web">{section.label}</p>
-          </div>
-        </Link>
-      ))}
     </div>
   );
-};
+}
 
 export default Web;

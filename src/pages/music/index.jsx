@@ -1,255 +1,246 @@
-import { Link, Element } from 'react-scroll';
-import { useAnimatedTitles, useBackgroundZoom, usePortfolioHover, useScrollAnimations, useSkillBars, usePortfolioReveal, useParallax, useSkillBoxHover, useContactLinks, useFooterIcons } from '../../hooks/useAnimations';
+import { Element } from 'react-scroll';
+import { useEditorial } from '../../hooks/useAnimations';
+import NavIndex from '../../components/navIndex/index.jsx';
+import SplitText from '../../components/splitText/index.jsx';
 
+import bckgrnd1 from './imgs/bckgrnd/Section1.png';
+import bckgrnd2 from './imgs/bckgrnd/Rectangle4.png';
+import bckgrnd3 from './imgs/bckgrnd/Rectangle12.png';
 
-import bckgrnd1 from './imgs/bckgrnd/Section1.png'
-import bckgrnd2 from './imgs/bckgrnd/Rectangle4.png'
-import bckgrnd3 from './imgs/bckgrnd/Rectangle12.png'
+import monitor from './imgs/icons/monitor.png';
+import musicIcon from './imgs/icons/music.png';
 
-import monitor from './imgs/icons/monitor.png'
-import music from './imgs/icons/music.png'
+import github from './imgs/icons/github.png';
+import beatstar from './imgs/icons/beatstar.png';
+import soundcloud from './imgs/icons/soundcloud.png';
+import youtube from './imgs/icons/youtube.png';
+import linkedin from './imgs/icons/linkedin.png';
 
-import location from './imgs/icons/location.png'
-import mail from './imgs/icons/sms.png'
-import call from './imgs/icons/call.png'
+import flstudio from './imgs/icons/flstudio.png';
+import protools from './imgs/icons/protools.png';
+import photoshop from './imgs/icons/photoshop.png';
+import premierepro from './imgs/icons/premierepro.png';
 
-import github from './imgs/icons/github.png'
-import beatstar from './imgs/icons/beatstar.png'
-import soundcloud from './imgs/icons/soundcloud.png'
-import youtube from './imgs/icons/youtube.png'
-import linkedin from './imgs/icons/linkedin.png'
+const SKILLS = [
+  { name: 'FL Studio', val: 90, icon: flstudio },
+  { name: 'Pro Tools', val: 30, icon: protools },
+  { name: 'Première Pro', val: 62, icon: premierepro },
+  { name: 'Photoshop', val: 56, icon: photoshop }
+];
 
+const STATEMENTS = [
+  { n: '01', title: 'Production', text: "J'utilise les outils plébiscités par les producteurs du monde entier." },
+  { n: '02', title: 'Écoute optimale', text: 'Un son calibré pour les écouteurs comme pour les enceintes de monitoring.' }
+];
 
-import flstudio from './imgs/icons/flstudio.png'
-import protools from './imgs/icons/protools.png'
-import photoshop from './imgs/icons/photoshop.png'
-import premierepro from './imgs/icons/premierepro.png'
+const TRACKS = [
+  { src: 'https://www.youtube.com/embed/EAe9R1XxQ2c', name: 'Maeva', tag: 'Afro Love ↗' },
+  { src: 'https://www.youtube.com/embed/wf8e1FvriCo', name: 'Slowly', tag: 'Afro Love ↗' },
+  { src: 'https://www.youtube.com/embed/Y9yoh8HDPtE', name: 'Sugar', tag: 'Afro Love ↗' },
+  { src: 'https://www.youtube.com/embed/bsKZGSoZPGY', name: 'Jollof', tag: 'Afro Love ↗' },
+  { src: 'https://www.youtube.com/embed/rd9gOr59KbI', name: 'Andando Pela Orla', tag: 'Slowed ↗' },
+  { src: 'https://www.youtube.com/embed/LDdPd1BuTJk', name: 'Anabella', tag: 'Afro Love ↗' }
+];
 
+const NAV = [
+  { name: 'about', label: 'À propos' },
+  { name: 'skills', label: 'Compétences' },
+  { name: 'compositions', label: 'Compositions' },
+  { name: 'contact', label: 'Contact' }
+];
 
+const MARQUEE = ['Beatmaker', 'Mixage', 'Composition', 'Afro', 'FL Studio', 'Mastering', 'Rog One Beats'];
 
 function Music() {
-  useAnimatedTitles();
-  useBackgroundZoom();
-  usePortfolioHover();
-  useScrollAnimations();
-  useSkillBars();
-  usePortfolioReveal();
-  useParallax();
-  useSkillBoxHover();
-  useContactLinks();
-  useFooterIcons();
+  useEditorial();
 
   return (
-    <>
-      <NavDots />
-      <section className="first-section">
-        <div className='first-section-box-img-bckgrnd'>
-          <img className='bckgrnd' src={bckgrnd1} alt="Studio de production musicale" />
+    <div className="page page--music">
+      <NavIndex sections={NAV} />
+
+      {/* ---------- HERO ---------- */}
+      <header className="hero">
+        <div className="hero__meta eyebrow js-hero-meta">
+          <span>Lille · FR</span>
+          <span>MAO · 6+ ans</span>
+          <span className="accent">(00 — Accueil)</span>
         </div>
-        <div className='first-section-content'>
-          <h2 className='animated-title'>ROG ONE BEATS <br /> 27 ANS</h2>
-          <h1 className='animated-title'>Beatmaker / Mixeur / Compositeur</h1>
-          <hr className='animated-title music'/>
-          <p className='animated-title'>Laissez-vous transporter par le rythme de la musique.</p>
+
+        <div className="hero__grid">
+          <div className="hero__type">
+            <p className="hero__kicker eyebrow js-hero-fade">Rog One Beats · 27 ans</p>
+            <h1 className="hero__title">
+              <span className="line"><span className="js-line" aria-label="Beatmaker"><SplitText text="Beatmaker" /></span></span>
+              <span className="line"><span className="js-line stroke" aria-label="Mixeur"><SplitText text="Mixeur" /></span></span>
+              <span className="line"><span className="js-line" aria-label="Compositeur">
+                <SplitText text="Compositeur" /><span className="mark char" aria-hidden="true">.</span>
+              </span></span>
+            </h1>
+            <p className="hero__lead js-hero-fade">
+              Laissez-vous transporter par le rythme de la musique.
+            </p>
+          </div>
+
+          <figure className="hero__media js-hero-media js-parallax">
+            <img src={bckgrnd1} alt="Studio de production musicale" />
+            <figcaption>Fig. 01 — Studio</figcaption>
+          </figure>
         </div>
-      </section>
+
+        <div className="marquee" aria-hidden="true">
+          <div className="marquee__track">
+            {[...MARQUEE, ...MARQUEE].map((word, i) => (
+              <span key={i}>{word}<span className="dot"> ✦ </span></span>
+            ))}
+          </div>
+        </div>
+      </header>
+
+      {/* ---------- À PROPOS ---------- */}
       <Element name="about">
-        <section className="apropos-section">
-          <div className="contents">
-            <h2 className='animated-title'>A PROPOS</h2>
-            <div className="box-text">
-              <p>Je m'appelle Roger RETITA, j'ai 27 ans. Né et grandi à Madagascar, j'ai toujours été passionné par l'art sous toutes ses formes. Dès mon plus jeune âge, j'ai pratiqué le dessin, puis j'ai exploré la musique sous diverses facettes : le chant, la flûte, le clavier, la guitare et la batterie. Au collège, je me suis intéressé au théâtre, rejoignant une troupe en troisième.</p>
-              <p>Une fois arrivé en France, j'ai renoué avec ma passion pour la musique, plus précisément la MAO (musique assistée par ordinateur). Depuis plus de six ans, je m'y adonne en autodidacte. Vous pouvez écouter certaines de mes créations sur ma chaîne YouTube. Pour moi, la création musicale exige une attention minutieuse aux détails pour garantir que le son soit optimal, que ce soit sur des écouteurs, un téléphone ou des enceintes de monitoring.</p>
-              <p>Je suis une personne appliquée dans mon travail, prenant le temps nécessaire avant de finaliser un projet, peu importe le temps que cela peut prendre. Travailler avec moi, c'est s'entourer de ma curiosité et de ma joie de vivre.</p>
-            </div>
-            <Link to="contact" smooth={true} duration={500}>
-              <button className='music'>Contact</button>
-            </Link>
+        <section className="block">
+          <div className="block__head">
+            <span className="block__num">01</span>
+            <h2 className="block__title js-clip">À&nbsp;Propos</h2>
           </div>
-          <div className="box-img">
+          <div className="about__body">
+            <div className="about__lead js-mask">
+              <p className="js-mask-line">Autodidacte,</p>
+              <p className="js-mask-line">la musique <span className="accent">au détail</span></p>
+              <p className="js-mask-line">près.</p>
+            </div>
+            <div className="about__cols" data-reveal>
+              <p>Je m&apos;appelle Roger RETITA, j&apos;ai 27 ans. Né et grandi à Madagascar, j&apos;ai toujours été passionné par l&apos;art sous toutes ses formes. Dès mon plus jeune âge, j&apos;ai pratiqué le dessin, puis exploré la musique : chant, flûte, clavier, guitare et batterie. Au collège, je me suis intéressé au théâtre, rejoignant une troupe en troisième.</p>
+              <p>Arrivé en France, j&apos;ai renoué avec la musique, plus précisément la MAO. Depuis plus de six ans, je m&apos;y adonne en autodidacte. La création musicale exige une attention minutieuse aux détails pour que le son soit optimal, sur des écouteurs, un téléphone ou des enceintes de monitoring.</p>
+              <p>Je suis une personne appliquée, prenant le temps nécessaire avant de finaliser un projet. Travailler avec moi, c&apos;est s&apos;entourer de ma curiosité et de ma joie de vivre.</p>
+            </div>
+          </div>
+          <figure className="about__media js-parallax" data-reveal>
             <img src={bckgrnd2} alt="Rog One Beats en studio" />
-          </div>
+          </figure>
         </section>
       </Element>
+
+      {/* ---------- COMPÉTENCES ---------- */}
       <Element name="skills">
-        <section className="skills-section">
-          <h2 className='animated-title'>SKILLS</h2>
-          <div className='skills-section-bx-contents'>
-            <div className='one-box-content'>
-              <h3><img src={monitor} alt="icon de crayon" />Outils de Production</h3>
-              <p>Utilise les outils de production les plus avancés, plébiscités par les producteurs du monde entier.</p>
-            </div>
-            <div className='one-box-content'>
-              <h3><img src={music} alt="icon de crayon" />Écoute Optimale</h3>
-              <p>Profitez d'une expérience d'écoute optimale sur des enceintes stéréo de qualité ou des écouteurs de haute fidélité.</p>
-            </div>
+        <section className="block">
+          <div className="block__head">
+            <span className="block__num">02</span>
+            <h2 className="block__title js-clip">Compétences</h2>
           </div>
-          <div className='skills-section-bx-contents'>
-            <div className='bx-group-comp'>
-              <div className='bx-one-comp'>
-                <img src={flstudio} alt="icône FL Studio" />
-                <div className='bx-one-comp-content'>
-                  <div className='bx-one-comp-infos'>
-                    <p>FL Studio</p>
-                    <p>90%</p>
-                  </div>
-                  <div className='progress-container'>
-                    <div className="progress-bar music" style={{width: '90%'}}>
-                    </div>
-                  </div>
-                </div>
+
+          <div className="statements">
+            {STATEMENTS.map((s) => (
+              <div className="statement" data-reveal key={s.n}>
+                <span className="statement__num">{s.n}</span>
+                <h3>
+                  <img
+                    src={s.n === '01' ? monitor : musicIcon}
+                    alt=""
+                    style={{ width: 22, height: 22, display: 'inline-block', verticalAlign: 'middle', marginRight: 10, filter: 'grayscale(1)' }}
+                  />
+                  {s.title}
+                </h3>
+                <p>{s.text}</p>
               </div>
-            </div>
-            <div className='bx-group-comp'>
-              <div className='bx-one-comp'>
-                <img src={protools} alt="icône Pro Tools" />
-                <div className='bx-one-comp-content'>
-                  <div className='bx-one-comp-infos'>
-                    <p>Pro Tools</p>
-                    <p>30%</p>
-                  </div>
-                  <div className='progress-container'>
-                    <div className="progress-bar music" style={{width: '30%'}}>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='bx-group-comp'>
-              <div className='bx-one-comp'>
-                <img src={premierepro} alt="icône Premiere Pro" />
-                <div className='bx-one-comp-content'>
-                  <div className='bx-one-comp-infos'>
-                    <p>Premiere Pro</p>
-                    <p>62%</p>
-                  </div>
-                  <div className='progress-container'>
-                    <div className="progress-bar music" style={{width: '62%'}}>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className='bx-group-comp'>
-              <div className='bx-one-comp'>
-                <img src={photoshop} alt="icône Photoshop" />
-                <div className='bx-one-comp-content'>
-                  <div className='bx-one-comp-infos'>
-                    <p>Photoshop</p>
-                    <p>56%</p>
-                  </div>
-                  <div className='progress-container'>
-                    <div className="progress-bar music" style={{width: '56%'}}>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
+
+          <ul className="skill-index">
+            {SKILLS.map((s, i) => (
+              <li className="skill-row" data-value={s.val} key={s.name}>
+                <span className="skill-row__num">{String(i + 1).padStart(2, '0')}</span>
+                <span className="skill-row__name"><img src={s.icon} alt="" />{s.name}</span>
+                <span className="skill-row__track"><span className="skill-row__fill" /></span>
+                <span className="skill-row__val">{s.val}</span>
+              </li>
+            ))}
+          </ul>
         </section>
       </Element>
+
+      {/* ---------- COMPOSITIONS ---------- */}
       <Element name="compositions">
-        <section className='portfolio-section'>
-          <div className='portfolio-head-content'>
-            <h2 className='animated-title'>MES COMPOSITIONS</h2>
-            <p>Laissez vous transporter par le rythme de la musique. Découvrez un aperçu de mes compositions musicales, de mes talents de mixeur et de mes créations en tant que beatmaker. Pour écouter toutes mes œuvres, consultez ma chaine <a className='txt-music' href="https://www.youtube.com/channel/UCDECuuPMRTnP4NWFvSC2jaA">YouTube</a>.</p>
+        <section className="block block--work">
+          <div className="block__head">
+            <span className="block__num">03</span>
+            <h2 className="block__title js-clip">Compositions</h2>
           </div>
-          <div className='bx-all-portfolio'>
-            <div className='bx-one-portfolio'>
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/EAe9R1XxQ2c" title="[FREE] Tayc x Dadju x Teni Type Beat - &quot; Maeva &quot; | Instru Afro Love 2024" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-            </div>
-            <div className='bx-one-portfolio'>
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/wf8e1FvriCo" title="[FREE] Ckay x Rema x Oxlade x Omah Lay x Tayc Type Beat - &quot; Slowly &quot; | Instru Afro Love 2024" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-            </div>
-            <div className='bx-one-portfolio'>
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Y9yoh8HDPtE" title="[FREE] Dadju x Tayc x Rema x Aya Nakamura x Victony Type Beat - &quot; Sugar &quot; | Instru Afro Love 2024" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-            </div>
-            <div className='bx-one-portfolio'>
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/bsKZGSoZPGY" title="[FREE] Teni x Rema x Oxlade x Tyla Type Beat - &quot; Jollof &quot; | Instru Afro Love 2024" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-            </div>
-            <div className='bx-one-portfolio'>
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/rd9gOr59KbI" title="&quot;Andando Pela Orla&quot; Gabriel Won [Slowed] Rog One Beats @gabrielwon" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-            </div>
-            <div className='bx-one-portfolio'>
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/LDdPd1BuTJk" title="[FREE]  Khaid x Nasboy x Davido x Wande Coal Type Beat - &quot; Anabella &quot; | Instru Afro Love 2024" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-            </div>
+          <p className="work-intro" data-reveal>
+            Un aperçu de mes compositions, de mon mixage et de mes créations en tant que beatmaker.
+            Pour tout écouter, rendez-vous sur ma chaîne{' '}
+            <a href="https://www.youtube.com/channel/UCDECuuPMRTnP4NWFvSC2jaA">YouTube</a>.
+          </p>
+          <div className="work-grid">
+            {TRACKS.map((t, i) => (
+              <div className="work-item work-item--video" data-reveal key={t.src}>
+                <div className="work-item__frame">
+                  <iframe
+                    src={t.src}
+                    title={t.name}
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="work-item__bar">
+                  <span className="name">{String(i + 1).padStart(2, '0')} / {t.name}</span>
+                  <span className="tag">{t.tag}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
       </Element>
+
+      {/* ---------- CONTACT ---------- */}
       <Element name="contact">
-        <section className='contact-section'>
-          <div className='contact-section-box-img-bckgrnd'>
-            <img className='bckgrnd' src={bckgrnd3} alt="image of code web" />
+        <section className="block block--contact">
+          <div className="contact__bg js-parallax">
+            <img src={bckgrnd3} alt="" />
           </div>
-          <div className='contact-section-content'>
-            <h2 className='animated-title'>CONTACT</h2>
-            <hr />
-            <div>
-              <h3><img src={location} alt="icon location" />Adresse Postale</h3>
-              <a className='txt-music' href="https://maps.app.goo.gl/hCJrmcsMZjsA9vKX8">1 bd Jean Baptiste Carpeaux, 95200 Sarcelles</a>
-              <h3><img src={mail} alt="icon mail" />Adresse Mail</h3>
-              <a className='txt-music' href="mailto:rogonebeats@gmail.com">rogonebeats@gmail.com</a>
-              <h3><img src={call} alt="icon call" />Téléphone</h3>
-              <a className='txt-music' href="tel:+33668347755">06.68.34.77.55</a>
+          <div className="contact__inner">
+            <div className="block__head">
+              <span className="block__num">04</span>
+              <h2 className="block__title js-clip">Contact</h2>
             </div>
-            <p className='mobilite'>Mobilité dans toute la France</p>
+            <a className="contact__mail" href="mailto:rogonebeats@gmail.com" data-reveal>
+              rogonebeats@gmail.com
+            </a>
+            <div className="contact__rows">
+              <div className="contact__row" data-reveal>
+                <span className="label">Adresse</span>
+                <p>Lille, France</p>
+              </div>
+              <div className="contact__row" data-reveal>
+                <span className="label">Téléphone</span>
+                <a href="tel:+33668347755">06 68 34 77 55</a>
+              </div>
+              <div className="contact__row" data-reveal>
+                <span className="label">Mobilité</span>
+                <p>Disponible dans toute la France</p>
+              </div>
+            </div>
           </div>
         </section>
       </Element>
-      <footer>
-        <p>© 2026 by RETITA Roger.</p>
-        <div className='footer-bx-icon'>
-          <a href="https://github.com/rogerK2RK?tab=repositories">
-            <img src={github} alt="icon github" />
-          </a>
-          <a href="https://www.linkedin.com/in/roger-retita-9402b1197/">
-            <img src={linkedin} alt="icon linkedin" />
-          </a>
-          <a href="https://www.youtube.com/channel/UCDECuuPMRTnP4NWFvSC2jaA">
-            <img src={youtube} alt="icône youtube" />
-          </a>
-          <a href="https://soundcloud.com/user-406770951">
-            <img src={soundcloud} alt="icon soundcloud" />
-          </a>
-          <a href="https://www.beatstars.com/rogerretita14426">
-            <img src={beatstar} alt="icon beatstar" />
-          </a>
-          
+
+      {/* ---------- FOOTER ---------- */}
+      <footer className="footer">
+        <div className="footer__strip">
+          <p className="footer__credit">© 2026 — Retita Roger / Rog One Beats</p>
+          <div className="footer__socials">
+            <a href="https://github.com/rogerK2RK?tab=repositories" aria-label="GitHub"><img src={github} alt="GitHub" /></a>
+            <a href="https://www.linkedin.com/in/roger-retita-9402b1197/" aria-label="LinkedIn"><img src={linkedin} alt="LinkedIn" /></a>
+            <a href="https://www.youtube.com/channel/UCDECuuPMRTnP4NWFvSC2jaA" aria-label="YouTube"><img src={youtube} alt="YouTube" /></a>
+            <a href="https://soundcloud.com/user-406770951" aria-label="SoundCloud"><img src={soundcloud} alt="SoundCloud" /></a>
+            <a href="https://www.beatstars.com/rogerretita14426" aria-label="BeatStars"><img src={beatstar} alt="BeatStars" /></a>
+          </div>
         </div>
       </footer>
-    </>
-  );
-}
-
-const NavDots = () => {
-  const sections = [
-    { name: 'about', label: 'À PROPOS' },
-    { name: 'skills', label: 'SKILLS' },
-    { name: 'compositions', label: 'COMPOSITIONS' },
-    { name: 'contact', label: 'CONTACT' }
-  ];
-
-  return (
-    <div
-      className={`nav-dots `}
-    >
-      {sections.map(section => (
-        <Link
-          key={section.name}
-          to={section.name}
-          smooth={true}
-          duration={500}
-          activeClass="active"
-          spy={true}
-        >
-          <div className="nav-dot-container">
-            <div className="nav-dot nav-dot-music"></div>
-            <p className="nav-label nav-label-music">{section.label}</p>
-          </div>
-        </Link>
-      ))}
     </div>
   );
-};
+}
 
 export default Music;

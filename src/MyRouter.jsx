@@ -17,6 +17,13 @@ const MyRouter = () => {
         }
     }, [isPageOne, navigate, location.pathname]);
 
+    // L'accent (rouge web / bleu musique) est posé sur le body pour que les
+    // éléments hors page — switch et curseur custom — l'héritent aussi.
+    useEffect(() => {
+        document.body.classList.toggle('mode-web', isPageOne);
+        document.body.classList.toggle('mode-music', !isPageOne);
+    }, [isPageOne]);
+
     const handleSwitch = () => {
         setIsPageOne(prevState => !prevState);
     };
