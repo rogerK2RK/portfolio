@@ -571,6 +571,19 @@ a {
 .work-item:nth-child(3n + 2) { grid-column: span 5; }
 .work-item:nth-child(3n)     { grid-column: span 12; }
 
+/* Repli : les projets au-delà des 5 premiers sont masqués. display:none les
+   sort du flux mais pas du calcul nth-child, donc l'agencement asymétrique
+   des 5 visibles ne bouge pas quand on déplie. */
+.work-grid--collapsed .work-item--extra { display: none; }
+
+.work-more {
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--pad-x);
+}
+
+.work-more .btn { margin-top: clamp(28px, 4vw, 56px); }
+
 .work-item__frame {
   flex: 1 1 auto;
   min-height: 0;

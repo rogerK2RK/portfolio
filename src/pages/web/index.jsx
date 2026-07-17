@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Head } from 'vite-react-ssg';
 import { Link as RouterLink } from 'react-router-dom';
 import { Link, Element } from 'react-scroll';
@@ -68,8 +69,11 @@ const MARQUEE = ['HTML', 'CSS', 'JavaScript', 'React', 'WordPress', 'PrestaShop'
 const DESCRIPTION =
   "Roger Retita, développeur web full stack : sites sur-mesure en React et Next.js, e-commerce PrestaShop et WordPress. Découvrez mes projets.";
 
+const WORK_PREVIEW = 5;
+
 function Web() {
   useEditorial();
+  const [showAllWork, setShowAllWork] = useState(false);
 
   return (
     <div className="page page--web">
@@ -200,26 +204,48 @@ function Web() {
             davantage chaque projet, consultez mon profil{' '}
             <a href="https://github.com/rogerK2RK?tab=repositories">GitHub</a>.
           </p>
-          <div className="work-grid">
-            {WORK.map((w, i) => (
-              <a
-                className={`work-item${w.featured ? ' work-item--featured' : ''}`}
-                href={w.url}
-                target="_blank"
-                rel="noreferrer"
-                data-reveal
-                key={w.name}
-              >
-                <div className="work-item__frame">
-                  <img src={w.img} alt={`Aperçu du projet ${w.name}`} />
-                </div>
-                <div className="work-item__bar">
-                  <span className="name">{String(i + 1).padStart(2, '0')} / {w.name}</span>
-                  <span className="tag">{w.tag}</span>
-                </div>
-              </a>
-            ))}
+          <div className={`work-grid${showAllWork ? '' : ' work-grid--collapsed'}`}>
+            {WORK.map((w, i) => {
+              const extra = i >= WORK_PREVIEW;
+              return (
+                <a
+                  className={`work-item${w.featured ? ' work-item--featured' : ''}${extra ? ' work-item--extra' : ''}`}
+                  href={w.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  // Les projets repliés n'ont pas data-reveal : sinon GSAP les
+                  // fige à opacity 0 et ils resteraient invisibles au dépliage.
+                  {...(extra && !showAllWork ? {} : { 'data-reveal': true })}
+                  key={w.name}
+                >
+                  <div className="work-item__frame">
+                    <img src={w.img} alt={`Aperçu du projet ${w.name}`} />
+                  </div>
+                  <div className="work-item__bar">
+                    <span className="name">{String(i + 1).padStart(2, '0')} / {w.name}</span>
+                    <span className="tag">{w.tag}</span>
+                  </div>
+                </a>
+              );
+            })}
           </div>
+
+          {WORK.length > WORK_PREVIEW && (
+            <div className="work-more">
+              <button
+                className="btn"
+                type="button"
+                data-magnetic
+                onClick={() => setShowAllWork((v) => !v)}
+                aria-expanded={showAllWork}
+              >
+                {showAllWork
+                  ? 'Voir moins'
+                  : `Voir tous les projets (${WORK.length})`}
+                <span className="arrow">{showAllWork ? '↑' : '↓'}</span>
+              </button>
+            </div>
+          )}
         </section>
       </Element>
 
