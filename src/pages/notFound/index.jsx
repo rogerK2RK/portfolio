@@ -18,7 +18,7 @@ function NotFound() {
         <p className="notfound__text">
           Cette page n&apos;existe pas, ou n&apos;existe plus.
         </p>
-        <Link className="blog__back" to="/">
+        <Link className="link-back" to="/">
           <span className="arrow">←</span> Retour au portfolio
         </Link>
       </section>

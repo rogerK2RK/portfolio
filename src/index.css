@@ -887,103 +887,160 @@ a {
 
 /* ========== BLOG ========== */
 
-/* Le blog n'a pas de switch : on compense la place qu'il occupait. */
-.page > .block:first-child { border-top: 0; padding-top: clamp(70px, 12vw, 150px); }
-
-.blog__intro {
-  padding: 0 var(--pad-x);
-  margin-bottom: clamp(36px, 6vw, 70px);
-  max-width: 46ch;
-  font-size: clamp(16px, 1.5vw, 21px);
-  color: var(--ink-70);
+/* Deux colonnes : liste des articles à gauche, article à droite. */
+.blog-shell {
+  display: grid;
+  grid-template-columns: clamp(260px, 26vw, 380px) 1fr;
+  min-height: 100vh;
+  align-items: start;
 }
 
-.blog__list {
-  list-style: none;
-  border-top: var(--border-w) solid var(--line);
+/* La sidebar reste visible pendant la lecture d'un long article. */
+.blog-side {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: var(--border-w) solid var(--line);
+  background: var(--paper-2);
 }
 
-.blog__item { border-bottom: var(--border-w) solid var(--line); }
-
-.blog__link {
-  display: block;
-  padding: clamp(26px, 3.5vw, 46px) var(--pad-x);
-  color: inherit;
-  text-decoration: none;
-  transition: background 0.4s var(--ease), color 0.4s var(--ease);
-}
-
-.blog__link:hover { background: var(--accent); color: var(--on-accent); }
-
-.blog__meta {
+.blog-side__inner {
   display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
+  flex-direction: column;
+  padding: clamp(24px, 3vw, 40px) 0;
+}
+
+.blog-side__back {
+  padding: 0 clamp(20px, 2vw, 32px);
+  margin-bottom: clamp(24px, 3vw, 38px);
   font-family: var(--mono);
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ink-40);
-  margin-bottom: 14px;
-}
-
-.blog__link:hover .blog__meta { color: inherit; opacity: 0.75; }
-
-.blog__tag { color: var(--accent); }
-.blog__link:hover .blog__tag { color: inherit; }
-
-.blog__title {
-  font-family: var(--display);
-  font-size: clamp(1.6rem, 3.4vw, 3rem);
-  /* 1.06 et non 1 : en capitales, les accents (MÊME, MÉTIER) viennent
-     sinon toucher la ligne du dessus quand le titre passe à la ligne. */
-  line-height: 1.06;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-
-.blog__desc {
-  max-width: 62ch;
   color: var(--ink-70);
-  margin-bottom: 16px;
-}
-
-.blog__link:hover .blog__desc { color: inherit; }
-
-.blog__more {
-  font-family: var(--mono);
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.blog__back {
-  display: inline-block;
-  margin: clamp(40px, 6vw, 80px) var(--pad-x) 0;
-  font-family: var(--mono);
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink);
   text-decoration: none;
-  border-bottom: var(--border-w) solid var(--accent);
-  padding-bottom: 4px;
 }
 
-.blog__back:hover { color: var(--accent); }
+.blog-side__back:hover { color: var(--accent); }
+
+.blog-side__title {
+  padding: 0 clamp(20px, 2vw, 32px);
+  margin-bottom: clamp(20px, 2.5vw, 32px);
+  font-family: var(--display);
+  font-size: clamp(2rem, 3.4vw, 3.2rem);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.blog-side__nav {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line-soft);
+}
+
+.blog-side__item {
+  display: block;
+  padding: clamp(16px, 1.6vw, 22px) clamp(20px, 2vw, 32px);
+  border-bottom: 1px solid var(--line-soft);
+  color: inherit;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition: background 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+
+.blog-side__item:hover { background: rgba(21, 17, 13, 0.05); }
+
+/* L'article ouvert est marqué par l'accent : sans repère, on ne sait plus
+   lequel des trois on lit. */
+.blog-side__item--active {
+  background: var(--paper);
+  border-left-color: var(--accent);
+}
+
+.blog-side__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-40);
+}
+
+.blog-side__tag { color: var(--accent); }
+
+.blog-side__name {
+  display: block;
+  font-family: var(--display);
+  font-size: clamp(1rem, 1.15vw, 1.3rem);
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+.blog-side__item--active .blog-side__name { color: var(--accent); }
+
+.blog-main { min-width: 0; }
+
+/* ---------- PANNEAU D'ACCUEIL ---------- */
+
+.blog-home {
+  padding: clamp(60px, 10vw, 140px) var(--pad-x);
+  max-width: 60ch;
+}
+
+.blog-home__title {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3.6vw, 3.4rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin-bottom: clamp(20px, 2.5vw, 32px);
+}
+
+.blog-home__lead {
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.7;
+  color: var(--ink-70);
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+
+.blog-home__hint {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
 
 /* ---------- ARTICLE ---------- */
+
+/* Dans la colonne de droite, le padding vertical du .block ferait un trou
+   en haut : l'article commence directement. */
+.blog-main .block {
+  border-top: 0;
+  padding-top: clamp(48px, 6vw, 90px);
+}
 
 /* Un titre d'article passe à la ligne, contrairement aux titres de section :
    le line-height serré de .block__title y ferait se chevaucher les lignes. */
 .post .block__title {
-  font-size: clamp(2rem, 5.5vw, 5rem);
+  font-size: clamp(1.8rem, 3.4vw, 3.4rem);
   line-height: 0.95;
 }
 
+.post .block__head {
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: clamp(20px, 2.5vw, 30px);
+}
+
+.post .block__num { padding-top: 0; }
+
 .post__meta {
   padding: 0 var(--pad-x);
-  margin-top: -20px;
   margin-bottom: clamp(36px, 5vw, 64px);
   font-family: var(--mono);
   font-size: 13px;
@@ -1038,6 +1095,22 @@ a {
   overflow-wrap: break-word;
 }
 
+/* Sous 900px, deux colonnes ne tiennent plus : la liste repasse au-dessus. */
+@media (max-width: 900px) {
+  .blog-shell { grid-template-columns: 1fr; }
+
+  .blog-side {
+    position: static;
+    height: auto;
+    overflow: visible;
+    border-right: 0;
+    border-bottom: var(--border-w) solid var(--line);
+  }
+
+  .blog-side__inner { padding-bottom: 0; }
+  .blog-home { padding-top: clamp(40px, 8vw, 70px); }
+}
+
 /* ========== 404 ========== */
 
 .notfound__text {
@@ -1045,6 +1118,20 @@ a {
   font-size: clamp(16px, 1.5vw, 20px);
   color: var(--ink-70);
 }
+
+.link-back {
+  display: inline-block;
+  margin: clamp(40px, 6vw, 80px) var(--pad-x) 0;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-bottom: var(--border-w) solid var(--accent);
+  padding-bottom: 4px;
+}
+
+.link-back:hover { color: var(--accent); }
 
 /* Lien vers le blog dans le footer : c'est la porte d'entrée du blog
    depuis les deux vitrines, donc aussi le lien interne que suit Google. */

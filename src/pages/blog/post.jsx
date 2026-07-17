@@ -1,5 +1,5 @@
 import { Head } from 'vite-react-ssg';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getPost, formatDate } from './posts.jsx';
 import { SITE_URL, AUTHOR } from '../../site.js';
 import NotFound from '../notFound/index.jsx';
@@ -28,7 +28,7 @@ function BlogPost() {
   };
 
   return (
-    <div className="page">
+    <>
       <Head>
         <title>{`${post.title} — ${AUTHOR}`}</title>
         <meta name="description" content={post.description} />
@@ -55,12 +55,8 @@ function BlogPost() {
         </p>
 
         <div className="post__body">{post.content}</div>
-
-        <Link className="blog__back" to="/blog">
-          <span className="arrow">←</span> Tous les articles
-        </Link>
       </article>
-    </div>
+    </>
   );
 }
 
