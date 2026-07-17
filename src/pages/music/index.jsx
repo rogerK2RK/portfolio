@@ -1,7 +1,13 @@
+import { Head } from 'vite-react-ssg';
+import { Link as RouterLink } from 'react-router-dom';
 import { Element } from 'react-scroll';
 import { useEditorial } from '../../hooks/useAnimations';
 import NavIndex from '../../components/navIndex/index.jsx';
 import SplitText from '../../components/splitText/index.jsx';
+import { SITE_URL } from '../../site.js';
+
+const DESCRIPTION =
+  "Roger Retita, alias Rog One Beats : compositions et instrumentales, du beatmaking au mixage. Écoutez mes productions.";
 
 import bckgrnd1 from './imgs/bckgrnd/Section1.png';
 import bckgrnd2 from './imgs/bckgrnd/Rectangle4.png';
@@ -56,6 +62,16 @@ function Music() {
 
   return (
     <div className="page page--music">
+      <Head>
+        <title>Roger Retita — Beatmaker & Compositeur</title>
+        <meta name="description" content={DESCRIPTION} />
+        <link rel="canonical" href={`${SITE_URL}/music`} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Roger Retita — Beatmaker & Compositeur" />
+        <meta property="og:description" content={DESCRIPTION} />
+        <meta property="og:url" content={`${SITE_URL}/music`} />
+      </Head>
+
       <NavIndex sections={NAV} />
 
       {/* ---------- HERO ---------- */}
@@ -230,6 +246,7 @@ function Music() {
       <footer className="footer">
         <div className="footer__strip">
           <p className="footer__credit">© 2026 — Retita Roger / Rog One Beats</p>
+          <RouterLink className="footer__blog" to="/blog">Blog <span className="arrow">→</span></RouterLink>
           <div className="footer__socials">
             <a href="https://github.com/rogerK2RK?tab=repositories" aria-label="GitHub"><img src={github} alt="GitHub" /></a>
             <a href="https://www.linkedin.com/in/roger-retita-9402b1197/" aria-label="LinkedIn"><img src={linkedin} alt="LinkedIn" /></a>

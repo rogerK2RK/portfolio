@@ -868,6 +868,13 @@ a {
   .skill-row__track { grid-area: track; }
   .hero__title { font-size: clamp(2rem, 13vw, 4.5rem); }
   .footer__strip { flex-direction: column; align-items: flex-start; }
+  /* Sur un titre d'article, le tag en colonne de gauche vole trop de largeur :
+     on l'empile pour rendre la ligne entière au titre. */
+  .post .block__head {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .post .block__num { padding-top: 0; }
 }
 
 /* ========== REDUCED MOTION ========== */
@@ -877,3 +884,180 @@ a {
   .marquee__track { animation: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ========== BLOG ========== */
+
+/* Le blog n'a pas de switch : on compense la place qu'il occupait. */
+.page > .block:first-child { border-top: 0; padding-top: clamp(70px, 12vw, 150px); }
+
+.blog__intro {
+  padding: 0 var(--pad-x);
+  margin-bottom: clamp(36px, 6vw, 70px);
+  max-width: 46ch;
+  font-size: clamp(16px, 1.5vw, 21px);
+  color: var(--ink-70);
+}
+
+.blog__list {
+  list-style: none;
+  border-top: var(--border-w) solid var(--line);
+}
+
+.blog__item { border-bottom: var(--border-w) solid var(--line); }
+
+.blog__link {
+  display: block;
+  padding: clamp(26px, 3.5vw, 46px) var(--pad-x);
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.4s var(--ease), color 0.4s var(--ease);
+}
+
+.blog__link:hover { background: var(--accent); color: var(--on-accent); }
+
+.blog__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-40);
+  margin-bottom: 14px;
+}
+
+.blog__link:hover .blog__meta { color: inherit; opacity: 0.75; }
+
+.blog__tag { color: var(--accent); }
+.blog__link:hover .blog__tag { color: inherit; }
+
+.blog__title {
+  font-family: var(--display);
+  font-size: clamp(1.6rem, 3.4vw, 3rem);
+  /* 1.06 et non 1 : en capitales, les accents (MÊME, MÉTIER) viennent
+     sinon toucher la ligne du dessus quand le titre passe à la ligne. */
+  line-height: 1.06;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.blog__desc {
+  max-width: 62ch;
+  color: var(--ink-70);
+  margin-bottom: 16px;
+}
+
+.blog__link:hover .blog__desc { color: inherit; }
+
+.blog__more {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.blog__back {
+  display: inline-block;
+  margin: clamp(40px, 6vw, 80px) var(--pad-x) 0;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: var(--border-w) solid var(--accent);
+  padding-bottom: 4px;
+}
+
+.blog__back:hover { color: var(--accent); }
+
+/* ---------- ARTICLE ---------- */
+
+/* Un titre d'article passe à la ligne, contrairement aux titres de section :
+   le line-height serré de .block__title y ferait se chevaucher les lignes. */
+.post .block__title {
+  font-size: clamp(2rem, 5.5vw, 5rem);
+  line-height: 0.95;
+}
+
+.post__meta {
+  padding: 0 var(--pad-x);
+  margin-top: -20px;
+  margin-bottom: clamp(36px, 5vw, 64px);
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-40);
+}
+
+/* Colonne de lecture : ~65 caractères, la largeur de confort en lecture. */
+.post__body {
+  padding: 0 var(--pad-x);
+  max-width: 68ch;
+}
+
+.post__body h2 {
+  font-family: var(--display);
+  font-size: clamp(1.3rem, 2.4vw, 2rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin: clamp(36px, 4vw, 56px) 0 14px;
+  padding-top: 18px;
+  border-top: var(--border-w) solid var(--line-soft);
+}
+
+.post__body p {
+  font-size: clamp(16px, 1.4vw, 19px);
+  line-height: 1.7;
+  color: var(--ink-70);
+  margin-bottom: 18px;
+}
+
+.post__body p:empty { display: none; }
+
+.post__body a {
+  color: var(--accent);
+  text-underline-offset: 3px;
+}
+
+.post__body strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.post__body code {
+  font-family: var(--mono);
+  font-size: 0.86em;
+  background: var(--paper-2);
+  border: 1px solid var(--line-soft);
+  padding: 2px 6px;
+  color: var(--ink);
+  /* Les longues signatures ne doivent pas élargir la colonne de lecture. */
+  overflow-wrap: break-word;
+}
+
+/* ========== 404 ========== */
+
+.notfound__text {
+  padding: 0 var(--pad-x);
+  font-size: clamp(16px, 1.5vw, 20px);
+  color: var(--ink-70);
+}
+
+/* Lien vers le blog dans le footer : c'est la porte d'entrée du blog
+   depuis les deux vitrines, donc aussi le lien interne que suit Google. */
+.footer__blog {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: var(--border-w) solid currentColor;
+  padding-bottom: 3px;
+  transition: opacity 0.3s var(--ease);
+}
+
+.footer__blog:hover { opacity: 0.6; }

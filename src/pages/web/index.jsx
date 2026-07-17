@@ -1,7 +1,10 @@
+import { Head } from 'vite-react-ssg';
+import { Link as RouterLink } from 'react-router-dom';
 import { Link, Element } from 'react-scroll';
 import { useEditorial } from '../../hooks/useAnimations';
 import NavIndex from '../../components/navIndex/index.jsx';
 import SplitText from '../../components/splitText/index.jsx';
+import { SITE_URL } from '../../site.js';
 
 import bckgrnd1 from './imgs/bckgrnd/bckgrnd-web1.png';
 import bckgrnd2 from './imgs/bckgrnd/bckgrnd-web2.png';
@@ -53,11 +56,24 @@ const NAV = [
 
 const MARQUEE = ['HTML', 'CSS', 'JavaScript', 'React', 'WordPress', 'PrestaShop', 'Figma', 'UI / UX', 'Claude Code', 'Full Stack'];
 
+const DESCRIPTION =
+  "Roger Retita, développeur web full stack : sites sur-mesure en React et Next.js, e-commerce PrestaShop et WordPress. Découvrez mes projets.";
+
 function Web() {
   useEditorial();
 
   return (
     <div className="page page--web">
+      <Head>
+        <title>Roger Retita — Développeur Web Full Stack</title>
+        <meta name="description" content={DESCRIPTION} />
+        <link rel="canonical" href={SITE_URL} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Roger Retita — Développeur Web Full Stack" />
+        <meta property="og:description" content={DESCRIPTION} />
+        <meta property="og:url" content={SITE_URL} />
+      </Head>
+
       <NavIndex sections={NAV} />
 
       {/* ---------- HERO ---------- */}
@@ -226,7 +242,8 @@ function Web() {
       {/* ---------- FOOTER ---------- */}
       <footer className="footer">
         <div className="footer__strip">
-          <p className="footer__credit">© 2026 — Retita Roger / Conçu &amp; développé maison</p>
+          <p className="footer__credit">© 2026 — RETITA ROGER / CONCEPTION, DÉVELOPPEMENT &amp; SON</p>
+          <RouterLink className="footer__blog" to="/blog">Blog <span className="arrow">→</span></RouterLink>
           <div className="footer__socials">
             <a href="https://github.com/rogerK2RK?tab=repositories" aria-label="GitHub"><img src={github} alt="GitHub" /></a>
             <a href="https://www.linkedin.com/in/roger-retita-9402b1197/" aria-label="LinkedIn"><img src={linkedin} alt="LinkedIn" /></a>
