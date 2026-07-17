@@ -51,7 +51,7 @@ const NAV = [
   { name: 'contact', label: 'Contact' }
 ];
 
-const MARQUEE = ['HTML', 'CSS', 'JavaScript', 'React', 'WordPress', 'Figma', 'UI / UX', 'Full Stack'];
+const MARQUEE = ['HTML', 'CSS', 'JavaScript', 'React', 'WordPress', 'PrestaShop', 'Figma', 'UI / UX', 'Claude Code', 'Full Stack'];
 
 function Web() {
   useEditorial();
@@ -114,7 +114,7 @@ function Web() {
             </div>
             <div className="about__cols" data-reveal>
               <p>Je m&apos;appelle Roger RETITA, j&apos;ai 27 ans. Né et grandi à Madagascar, je suis une personne naturellement curieuse, aimant découvrir de nouvelles choses. En arrivant en France, j&apos;ai développé une passion pour le développement web, que j&apos;aborde avec la même rigueur et précision que mes autres intérêts artistiques. Aujourd&apos;hui développeur web full stack, j&apos;en ai fait mon métier.</p>
-              <p>Pour moi, le développement web ne diffère pas tant de la création musicale. Dans les deux domaines, il est crucial que le travail soit bien présenté et accessible sur tous les supports — tablette, ordinateur ou téléphone. Cette attention au détail assure une expérience utilisateur optimale.</p>
+              <p>Pour moi, le développement web ne diffère pas tant de la création musicale. Dans les deux domaines, il est crucial que le travail soit bien présenté et accessible sur tous les supports : tablette, ordinateur ou téléphone. Cette attention au détail assure une expérience utilisateur optimale.</p>
               <p>Je suis une personne appliquée, prenant le temps nécessaire avant de finaliser un projet. Travailler avec moi, c&apos;est s&apos;entourer de ma curiosité et de ma joie de vivre.</p>
               <Link to="contact" smooth={true} duration={600}>
                 <button className="btn" data-magnetic>Prendre contact <span className="arrow">→</span></button>
