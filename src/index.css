@@ -1035,6 +1035,13 @@ a {
 
 /* Un titre d'article passe à la ligne, contrairement aux titres de section :
    le line-height serré de .block__title y ferait se chevaucher les lignes. */
+.post {
+  /* En ch mesurés sur le conteneur (16px), alors que le texte du corps est
+     en 19px : 75ch donnent ici ~85 caractères par ligne, la limite haute du
+     confort de lecture. Vérifier à l'écran plutôt que recalculer. */
+  --post-col: 75ch;
+}
+
 .post .block__title {
   font-size: clamp(1.8rem, 3.4vw, 3.4rem);
   line-height: 0.95;
@@ -1044,6 +1051,18 @@ a {
   grid-template-columns: 1fr;
   gap: 12px;
   margin-bottom: clamp(20px, 2.5vw, 30px);
+}
+
+/* Colonne de lecture centrée dans l'espace restant, plutôt que collée à
+   gauche : tout le blanc se retrouvait d'un seul côté. Elle reste bornée —
+   au-delà d'environ 90 caractères, l'œil perd le début de la ligne suivante.
+   Les trois blocs partagent la même largeur pour rester alignés. */
+.post .block__head,
+.post .post__meta,
+.post .post__body {
+  width: 100%;
+  max-width: calc(var(--post-col) + 2 * var(--pad-x));
+  margin-inline: auto;
 }
 
 .post .block__num { padding-top: 0; }
@@ -1061,7 +1080,6 @@ a {
 /* Colonne de lecture : ~65 caractères, la largeur de confort en lecture. */
 .post__body {
   padding: 0 var(--pad-x);
-  max-width: 68ch;
 }
 
 .post__body h2 {
