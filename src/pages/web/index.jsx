@@ -16,6 +16,10 @@ import soundcloud from './imgs/icons/soundcloud.png';
 import youtube from './imgs/icons/youtube.png';
 import linkedin from './imgs/icons/linkedin.png';
 
+// Captures en JPEG : en PNG, ces trois-la pesaient 2,6 Mo a elles seules.
+import masora from './imgs/prtfl/masora.studio.jpg';
+import monkitsolaire from './imgs/prtfl/monkitsolaire.fr.jpg';
+import mksun from './imgs/prtfl/mk-sun.com.jpg';
 import doohit from './imgs/prtfl/doohit.fr_.png';
 import gameone from './imgs/prtfl/rogerk2rk.github.io_P4_RETITA_Roger_.png';
 import photographe from './imgs/prtfl/rogerk2rk.github.io_P6_Retita_Roger_.png';
@@ -38,9 +42,14 @@ const STATEMENTS = [
   { n: '03', title: 'Marketing', text: "De l'emailing à l'automatisation (Brevo, Connectif) pour transformer le trafic en clients." }
 ];
 
+// Les projets professionnels d'abord : c'est ce qu'un client ou un recruteur
+// regarde, et il s'arrête souvent aux trois premiers.
 const WORK = [
-  { img: portfolio, url: 'https://rogerretita.editorx.io/mysite', name: 'Portfolio', tag: 'Site vitrine ↗' },
+  { img: masora, url: 'https://masora.studio/', name: 'Masora Studio', tag: 'Next.js ↗', featured: true },
+  { img: monkitsolaire, url: 'https://monkitsolaire.fr/', name: 'Mon Kit Solaire', tag: 'PrestaShop ↗', featured: true },
+  { img: mksun, url: 'https://mk-sun.com/', name: 'MK-SUN', tag: 'WordPress ↗', featured: true },
   { img: doohit, url: 'https://doohit.fr/', name: 'Doohit', tag: 'Plateforme ↗' },
+  { img: portfolio, url: 'https://rogerretita.editorx.io/mysite', name: 'Portfolio', tag: 'Site vitrine ↗' },
   { img: ohmyfood, url: 'https://rogerk2rk.github.io/P3_01_lienGithub/index.html', name: 'Ohmyfood', tag: 'Animation CSS ↗' },
   { img: photographe, url: 'https://rogerk2rk.github.io/P6_Retita_Roger/', name: 'Photographe', tag: 'Site photo ↗' },
   { img: harmonia, url: 'https://rogerk2rk.github.io/projetfinal-semaine1/', name: 'Harmonia', tag: 'Projet final ↗' },
@@ -193,7 +202,14 @@ function Web() {
           </p>
           <div className="work-grid">
             {WORK.map((w, i) => (
-              <a className="work-item" href={w.url} target="_blank" rel="noreferrer" data-reveal key={w.name}>
+              <a
+                className={`work-item${w.featured ? ' work-item--featured' : ''}`}
+                href={w.url}
+                target="_blank"
+                rel="noreferrer"
+                data-reveal
+                key={w.name}
+              >
                 <div className="work-item__frame">
                   <img src={w.img} alt={`Aperçu du projet ${w.name}`} />
                 </div>

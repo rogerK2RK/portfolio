@@ -615,6 +615,19 @@ a {
   white-space: nowrap;
 }
 
+/* Projets professionnels : la barre passe en accent en permanence, et
+   l'image reste en couleur sans attendre le survol — sur mobile il n'y a
+   pas de survol, donc c'est le seul repere qui tienne partout. */
+.work-item--featured .work-item__bar {
+  background: var(--accent);
+  border-top-color: var(--accent);
+}
+
+.work-item--featured .work-item__bar .name,
+.work-item--featured .work-item__bar .tag { color: var(--on-accent); }
+
+.work-item--featured .work-item__frame img { filter: none; }
+
 .work-item:hover .work-item__bar { background: var(--accent); }
 .work-item:hover .name,
 .work-item:hover .tag { color: var(--on-accent); }
