@@ -909,12 +909,22 @@ a {
 .blog-side__inner {
   display: flex;
   flex-direction: column;
-  padding: clamp(24px, 3vw, 40px) 0;
+}
+
+/* La liste scrolle dans la sidebar : sans ça, le retour au portfolio et le
+   titre disparaissent dès qu'on descend dans les articles. */
+.blog-side__head {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: clamp(24px, 3vw, 40px) 0 clamp(16px, 2vw, 24px);
+  background: var(--paper-2);
 }
 
 .blog-side__back {
+  display: inline-block;
   padding: 0 clamp(20px, 2vw, 32px);
-  margin-bottom: clamp(24px, 3vw, 38px);
+  margin-bottom: clamp(16px, 2vw, 24px);
   font-family: var(--mono);
   font-size: 12px;
   letter-spacing: 0.08em;
@@ -927,7 +937,6 @@ a {
 
 .blog-side__title {
   padding: 0 clamp(20px, 2vw, 32px);
-  margin-bottom: clamp(20px, 2.5vw, 32px);
   font-family: var(--display);
   font-size: clamp(2rem, 3.4vw, 3.2rem);
   line-height: 1;
